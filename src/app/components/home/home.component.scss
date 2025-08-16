@@ -1,6 +1,7 @@
 @use "colors" as cv;
 @use "fonts" as ft;
 @use "mixins" as mx;
+@use "variables" as vr;
 
 .background {
   background-color: cv.$Background;
@@ -9,36 +10,59 @@
     background-image: url("../../../assets/Images/pour-coffe.jpg");
     background-size: cover;
     background-position: center;
-    height: 80vh;
+    height: 75vh;
     color: cv.$white-color;
     @include mx.flex-display(row, start, center);
-  }
+    @include mx.position(relative);
+    @media (max-width: vr.$breakpoint-md) {
+      height: 25vh;
+    }
 
-  .slogan-position {
-    margin: 20px auto auto 70px;
-
-    .slogan-style {
-      padding: 0 35px;
-      margin-left: 50px;
-      @include mx.flex-display(column, center, start, wrap);
-
-      .slogan-text {
-        font-family: ft.$Primary-Font;
-        font-weight: 500;
-        font-style: normal;
-        font-size: 40px;
-        margin-bottom: 15px;
+    .slogan-position {
+      @include mx.position(absolute, 150px, auto, auto, 100px);
+      width: 40%;
+      @media (max-width: vr.$breakpoint-md) {
+        width: 70%;
+        @include mx.position(absolute, 50px, auto, auto, 50px);
       }
+  
+      .slogan-style {
+        @include mx.flex-display(column, center, start, wrap);
 
-      .button-style {
-        width: 30%;
-        background-color: cv.$white-color;
-        padding: 10px 0;
-        border-width: 0;
-        border-radius: 50px;
+        .welcome {
+          font-size: 27px;
+          @media (max-width: vr.$breakpoint-md) {
+            font-size: 15px;
+          }
+        }
+  
+        .slogan-text {
+          font-family: ft.$Primary-Font;
+          font-weight: 500;
+          font-style: normal;
+          font-size: 40px;
+          margin-bottom: 15px;
+  
+          @media (max-width: vr.$breakpoint-md) {
+            font-size: 20px;
+          }
+        }
+  
+        .button-style {
+          width: 30%;
+          background-color: cv.$white-color;
+          padding: 10px 0;
+          border-width: 0;
+          border-radius: 50px;
+          @media (max-width: vr.$breakpoint-md) {
+            font-size: x-small;
+            padding: 5px;
+          }
+        }
       }
     }
   }
+
 
   .products-background {
     background-color: cv.$white-color;

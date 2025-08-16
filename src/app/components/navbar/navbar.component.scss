@@ -1,12 +1,14 @@
 @use "fonts" as fr;
 @use "colors" as cv;
 @use "mixins" as mx;
+@use "variables" as vr;
 
 .general-container {
   @include mx.position();
 
   .navbar-container {
     width: 100%;
+    z-index: 1;
     @include mx.position(absolute);
 
     .container {
@@ -16,28 +18,49 @@
       .col-3 {
         padding-left: 48px;
 
-        .shop-name {
-          font-family: fr.$Shop-Name;
-          font-optical-sizing: auto;
-          font-weight: 400;
-          font-style: normal;
-          font-size: 35px;
-        }
       }
-
+      
       .navbar-alignement{
         gap: 50px;
         font-size: large;
         @include mx.flex-display();
       }
-
+      
       .icon-alignment{
         @include mx.flex-display(row, start, center);
-
+        
         i{
           font-size: 23px;
         }
       }
+    }
+  }
+  
+  .mobile-navbar {
+    width: 30px;
+    height: 26px;
+    padding: 1px;
+    border: 1px solid cv.$text-whitesmoke;
+    border-radius: 3px;
+    z-index: 1;
+    @include mx.position(absolute, 10px, 10px);
+    @include mx.flex-display(column, space-evenly, center);
+    
+    .straight-lines {
+      width: 75%;
+      height: 3px;
+      background-color: cv.$text-whitesmoke;
+      border-radius: 50px;
+    }
+  }
+  .shop-name {
+    font-family: fr.$Shop-Name;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+    @media (max-width: vr.$breakpoint-md) {
+      font-size: 20px;
     }
   }
 }
