@@ -12,5 +12,6 @@ export class ProductCardComponent {
   @Input() productName: string = "";
   @Input() productDescription: string = "";
   @Input() productPrice: number = 0;
+  @Input() showPrice: boolean = true;
 
 }

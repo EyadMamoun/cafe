@@ -3,10 +3,12 @@
 @use "variables" as vr;
 
 .card-background {
-  background-color: #fff8f2;
+  background-color: #f1f0ee;
+  padding: 8px;
+  border-radius: 8px;
   @media (max-width: vr.$breakpoint-md) {
-      margin-bottom: 15px;
-    }
+    margin-bottom: 15px;
+  }
 
   .header {
     font-size: 16px;
@@ -24,7 +26,7 @@
     }
   }
 
-  .cc {
+  .product-pricing {
     @include mx.flex-display(row, space-between, center);
     @media (max-width: vr.$breakpoint-md) {
       @include mx.flex-display(column, center, start);

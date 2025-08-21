@@ -14,11 +14,11 @@ export class FooterComponent {
     this.footerContent = [
       {
         headline: 'PRIVACY',
-        content: ['Terms of use', 'Privacy policy', 'Conditions'],
+        content: ['Terms of use', 'Privacy policy', 'Cookies'],
       },
       {
         headline: 'SERVICES',
-        content: ['Shop', 'Orders', 'Menu'],
+        content: ['Shop', 'Order ahead', 'Menu'],
       },
       {
         headline: 'ABOUT US',
@@ -26,7 +26,7 @@ export class FooterComponent {
       },
       {
         headline: 'INFORMATION',
-        content: ['Sets & pricing', 'Set your products', 'Jobs'],
+        content: ['Plans & pricing', 'Set your products', 'Jobs'],
       },
     ];
   }

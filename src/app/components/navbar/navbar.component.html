@@ -1,18 +1,18 @@
 <div class="general-container">
   <div class="navbar-container">
     @if(!mobileView){
-      <div class="container">
+    <div class="container">
       <div class="row">
         <div class="col-3">
           <span class="shop-name">Coffee Corner</span>
         </div>
         <div class="col-8 navbar-alignement">
-          <span>HOME</span>
-          <span>COFFEE</span>
-          <span>BAKERY</span>
-          <span>SHOP</span>
-          <span>ABOUT</span>
-          <span>LOGIN</span>
+          <a href="/home"><span>HOME</span></a>
+          <a href="/coffee-menu"><span>COFFEE</span></a>
+          <a href=""><span>BAKERY</span></a>
+          <a href=""><span>SHOP</span></a>
+          <a href=""><span>ABOUT</span></a>
+          <a href=""><span>LOGIN</span></a>
         </div>
         <div class="col-1 icon-alignment">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -22,17 +22,35 @@
     }
 
     @if(mobileView){
-      <div class="mobile-view">
+    <div class="mobile-view">
       <div>
         <span class="shop-name">Coffee Corner</span>
       </div>
-    
-      <div class="mobile-navbar">
+
+      @if(menuButtonView) {
+      <div class="mobile-navbar" (click)="onNavbarClick()">
         <div class="straight-lines"></div>
         <div class="straight-lines"></div>
         <div class="straight-lines"></div>
       </div>
+      }
+      @if(!menuButtonView) {
+      <div (click)="onMenuCancel()">
+        <i class="fa-solid fa-xmark text-white"></i>
+      </div>
+      }
     </div>
+
+    @if(megaMenuView) {
+    <div class="mobile-menu">
+      <span>HOME</span>
+      <span>COFFEE</span>
+      <span>BAKERY</span>
+      <span>SHOP</span>
+      <span>ABOUT</span>
+      <span>LOGIN</span>
+    </div>
+    }
     }
   </div>
 </div>

@@ -24,6 +24,11 @@
         gap: 50px;
         font-size: large;
         @include mx.flex-display();
+
+        a {
+          text-decoration: none;
+          color: cv.$white-color;
+        }
       }
       
       .icon-alignment{
@@ -58,6 +63,25 @@
     }
   }
   }
+  .mobile-menu {
+    background-color: cv.$white-color;
+    border-radius: 8px;
+    @include mx.flex-display(column);
+
+    span {
+      width: 100%;
+      text-align: center;
+      color: cv.$text-brown;
+      padding: 11px;
+      border: 1px solid rgba(100, 100, 100, 0.1);
+    }
+
+    span:hover {
+      background-color: cv.$text-brown;
+      color: cv.$text-whitesmoke;
+    }
+  }
+
   .shop-name {
     font-family: fr.$Shop-Name;
     font-optical-sizing: auto;

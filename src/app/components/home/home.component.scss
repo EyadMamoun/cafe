@@ -109,7 +109,7 @@
         font-size: 20px;
         color: cv.$text-brown;
         @media (max-width: vr.$breakpoint-md) {
-          font-size: 9px;
+          font-size: 8px;
         }
       }
     }
@@ -142,7 +142,7 @@
       border-width: 0;
       border-radius: 50px;
       @media (max-width: vr.$breakpoint-md) {
-        padding: 8px 16px;
+        padding: 8px 13px;
         margin-top: 8px;
         font-size: 9px;
       }

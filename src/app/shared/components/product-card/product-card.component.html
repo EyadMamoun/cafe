@@ -1,11 +1,13 @@
-<div class="border rounded p-2 card-background">
+<div class="card-background">
   <img class="w-100 rounded" [src]="imgSrc" [alt]="imgAlt">
+  @if(showPrice) {
   <div class="d-flex flex-column my-2">
     <span class="header">{{productName}}</span>
     <span class="description">{{productDescription}}</span>
   </div>
-  <div class="cc">
+    <div class="product-pricing">
     <span class="price">{{"EGP " + productPrice}}</span>
     <button class="btn btn-style">Order Now</button>
   </div>
+  }
 </div>

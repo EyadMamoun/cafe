@@ -1,0 +1,17 @@
+@use "mixins" as mx;
+@use "colors" as cv;
+
+.row {
+    margin-top: 100px;
+
+    .col-2 {
+        width: 13%;
+    }
+
+    .product-description {
+        background-color: cv.$white-color;
+        border-radius: 8px;
+        height: 174px;
+        @include mx.flex-display(column, start, start);
+    }
+}
