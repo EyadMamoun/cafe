@@ -4,14 +4,38 @@
 .row {
     margin-top: 100px;
 
-    .col-2 {
-        width: 13%;
+    .header-style {
+        text-align: center;
+        font-size: 25px;
+        font-weight: 700;
+        color: cv.$text-brown;
+        margin-bottom: 25px;
     }
 
-    .product-description {
-        background-color: cv.$white-color;
-        border-radius: 8px;
-        height: 174px;
-        @include mx.flex-display(column, start, start);
+    .menu-container {
+        @include mx.flex-display(row, space-evenly, center, wrap);
+
+        .menu-option {
+        width: 40%;
+        display: flex;
+
+        .img-style {
+            width: 62%;
+            margin-right: 7px;
+        }
+        .product-description {
+            background-color: #f1f0ee;
+            border-radius: 8px;
+            padding: 10px;
+            @include mx.flex-display(column, space-between, start);
+
+            .btn-style {
+              font-size: 15px;
+              background-color: cv.$text-brown;
+              color: white;
+            }
+        }
     }
+    }
+
 }
