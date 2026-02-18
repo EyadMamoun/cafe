@@ -1,0 +1,23 @@
+@use "mixins" as mx;
+@use "colors" as cv;
+
+.row {
+    margin-top: 100px;
+
+    .menu-container {
+        @include mx.flex-display(row, space-evenly, center, wrap);
+
+        .item-positioning{
+            width: 50%;
+            @include mx.flex-display();
+        }
+    }
+
+    .header-style {
+        text-align: center;
+        font-size: 27px;
+        font-weight: 700;
+        color: cv.$text-brown;
+        margin-bottom: 25px;
+    }
+}

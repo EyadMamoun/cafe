@@ -1,19 +1,22 @@
-<div class="menu-container">
-    @for (item of menuItems; track item.id) {
-    <div class="menu-option">
-        <div class="img-style">
-            <app-product-card [imgSrc]="item.productImg" [showPrice]="false" />
+<div class="menu-option">
+    <div class="img-style">
+        <app-product-card [imgSrc]="menuItems.productImg" [showPrice]="false" />
+    </div>
+    <div class="product-description">
+        <div class="d-flex flex-column">
+            <span class="fs-4">{{menuItems.productName}}</span>
+            <span>{{menuItems.productDescription}}</span>
         </div>
-        <div class="product-description">
-            <div class="d-flex flex-column">
-                <span class="fs-4">{{item.productName}}</span>
-                <span>{{item.productDescription}}</span>
+        <div class="w-100 d-flex justify-content-between">
+            <span class="fw-bold fs-5">{{'EGP ' + menuItems.productPrice}}</span>
+            @if(isCounter){
+            <div class="counter">
+                <button class="btn counter-btn" (click)="removeItemBtn()">-</button>
+                <span class="px-2 fs-5">{{counter}}</span>
+                <button class="btn counter-btn" (click)="addItemBtn()">+</button>
             </div>
-            <div class="w-100 d-flex justify-content-between">
-                <span class="fw-bold fs-5">{{'EGP ' + item.productPrice}}</span>
-                <button class="btn btn-style">Order Now</button>
-            </div>
+            }
+            <button class="btn btn-style" (click)="orderBtnClick()">{{btnState}}</button>
         </div>
     </div>
-    }
 </div>

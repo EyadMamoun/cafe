@@ -16,7 +16,11 @@
         </div>
 
         <!-- Hot Drinks Menu -->
-        <app-menu-option [menuItems]="hotCoffee"></app-menu-option>
+        <div class="menu-container">
+            @for (item of hotCoffee; track item.id) {
+            <app-menu-option class="item-positioning" [menuItems]="item"></app-menu-option>
+            }
+        </div>
 
         <div class="separator" #coldDrinksSection>
             <div class="separator-line"></div>
@@ -25,6 +29,10 @@
         </div>
 
         <!-- Cold Drinks Menu -->
-        <app-menu-option [menuItems]="icedCoffee"></app-menu-option>
+        <div class="menu-container">
+            @for (item of icedCoffee; track item.id) {
+            <app-menu-option class="item-positioning" [menuItems]="item"></app-menu-option>
+            }
+        </div>
     </div>
 </div>

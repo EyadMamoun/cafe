@@ -1,1 +1,12 @@
-<p>dessert-menu works!</p>
+<div class="container py-5">
+    <div class="row align-items-center bg-white py-4 border rounded">
+        <span class="header-style">DESSERT MENU</span>
+
+        <!-- Dessert Menu -->
+        <div class="menu-container">
+            @for (item of dessert; track item.id) {
+            <app-menu-option class="item-positioning" [menuItems]="item"></app-menu-option>
+            }
+        </div>
+    </div>
+</div>

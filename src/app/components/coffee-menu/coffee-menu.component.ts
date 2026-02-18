@@ -1,5 +1,4 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { ProductCardComponent } from '../../shared/components/product-card/product-card.component';
 import { Product } from '../../types/products.type';
 import { MenuOptionComponent } from '../../shared/components/menu-option/menu-option.component';
 
