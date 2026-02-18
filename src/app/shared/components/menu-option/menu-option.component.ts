@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Product } from '../../../types/products.type';
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-menu-option',
-  imports: [],
+  imports: [ProductCardComponent],
   templateUrl: './menu-option.component.html',
-  styleUrl: './menu-option.component.scss'
+  styleUrl: './menu-option.component.scss',
 })
 export class MenuOptionComponent {
-
+  @Input() menuItems: Product[] = [];
 }

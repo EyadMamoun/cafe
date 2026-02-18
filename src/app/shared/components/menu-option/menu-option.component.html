@@ -1,1 +1,19 @@
-<p>menu-option works!</p>
+<div class="menu-container">
+    @for (item of menuItems; track item.id) {
+    <div class="menu-option">
+        <div class="img-style">
+            <app-product-card [imgSrc]="item.productImg" [showPrice]="false" />
+        </div>
+        <div class="product-description">
+            <div class="d-flex flex-column">
+                <span class="fs-4">{{item.productName}}</span>
+                <span>{{item.productDescription}}</span>
+            </div>
+            <div class="w-100 d-flex justify-content-between">
+                <span class="fw-bold fs-5">{{'EGP ' + item.productPrice}}</span>
+                <button class="btn btn-style">Order Now</button>
+            </div>
+        </div>
+    </div>
+    }
+</div>

@@ -9,24 +9,22 @@
                 Drinks</div>
         </div>
 
-        <div class="menu-container">
-            @for (item of hotCoffee; track item.id) {
-            <div class="menu-option">
-                <div class="img-style">
-                    <app-product-card [imgSrc]="item.productImg" [showPrice]="false" />
-                </div>
-                <div class="product-description">
-                    <div class="d-flex flex-column">
-                        <span class="fs-4">{{item.productName}}</span>
-                        <span>{{item.productDescription}}</span>
-                    </div>
-                    <div class="w-100 d-flex justify-content-between">
-                        <span class="fw-bold fs-5">{{'EGP ' + item.productPrice}}</span>
-                        <button class="btn btn-style">Order Now</button>
-                    </div>
-                </div>
-            </div>
-            }
+        <div class="separator">
+            <div class="separator-line"></div>
+            <span class="separator-title">Hot Drinks</span>
+            <div class="separator-line"></div>
         </div>
+
+        <!-- Hot Drinks Menu -->
+        <app-menu-option [menuItems]="hotCoffee"></app-menu-option>
+
+        <div class="separator" #coldDrinksSection>
+            <div class="separator-line"></div>
+            <span class="separator-title">Cold Drinks</span>
+            <div class="separator-line"></div>
+        </div>
+
+        <!-- Cold Drinks Menu -->
+        <app-menu-option [menuItems]="icedCoffee"></app-menu-option>
     </div>
 </div>

@@ -33,31 +33,20 @@
         }
     }
 
-    .menu-container {
-        @include mx.flex-display(row, space-evenly, center, wrap);
+    .separator{
+        margin-top: 34px;
+        margin-bottom: 6px;
+        @include mx.flex-display();
 
-        .menu-option {
-        width: 40%;
-        display: flex;
-        margin: 16px 0;
-
-        .img-style {
-            width: 30%;
-            margin-right: 7px;
+        .separator-line{
+            height: 2px;
+            width: 35%;
+            background-color: cv.$Background;
         }
-        .product-description {
-            background-color: #f1f0ee;
-            border-radius: 8px;
-            padding: 10px;
-            @include mx.flex-display(column, space-between, start);
 
-            .btn-style {
-              font-size: 14px;
-              background-color: cv.$text-brown;
-              color: white;
-            }
+        .separator-title{
+            margin: 0 8px;
+            color: cv.$text-brown;
         }
     }
-    }
-
 }
