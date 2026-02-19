@@ -13,6 +13,8 @@ export class ProductCardComponent {
   @Input() productDescription: string = '';
   @Input() productPrice: number = 0;
   @Input() showPrice: boolean = true;
+  @Input() specialProduct: boolean = false;
+  @Input() normalProduct: boolean = false;
 
   isCounter: boolean = false;
   counter: number = 1;

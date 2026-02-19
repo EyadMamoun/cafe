@@ -37,7 +37,8 @@
         @for(product of specialCoffee; track product.id){
         <div class="col-6 col-md-3">
           <app-product-card [imgSrc]="product.productImg" [productName]="product.productName"
-            [productDescription]="product.productDescription" [productPrice]="product.productPrice" />
+            [productDescription]="product.productDescription" [productPrice]="product.productPrice"
+            [specialProduct]="true" />
         </div>
         }
       </div>
@@ -50,7 +51,8 @@
         @for(product of specialDesserts; track product.id){
         <div class="col-6 col-md-3">
           <app-product-card [imgSrc]="product.productImg" [productName]="product.productName"
-            [productDescription]="product.productDescription" [productPrice]="product.productPrice" />
+            [productDescription]="product.productDescription" [productPrice]="product.productPrice"
+            [specialProduct]="true" />
         </div>
         }
       </div>
