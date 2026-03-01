@@ -1,47 +1,49 @@
 @use "colors" as cv;
 @use "mixins" as mx;
 
-.container{
-    margin: 20px 0;
+.details-container{
+    margin: 100px 0;
+    @include mx.flex-display(row, flex-start, flex-start);
 
-    .img-bg{
-        background-color: #f1f0ee;
-        padding: 16px;
-        border-radius: 8px;
-        .img-section{
-            width: 100%;
-            border-radius: 8px;
-        }
+    .icon-circle{
+        width: 50px;
+        height: 50px;
+        background-color: cv.$text-brown;
+        color: white;
+        border-radius: 50%;
+        font-size: x-large;
+        margin-left: 28px;
+        position: relative;
+        @include mx.flex-display();
+    }
+
+    .icon-circle::after{
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 340px;
+        border-left: 3px dashed cv.$text-brown;
     }
 
     .details-section{
-        background-color: #f1f0ee;
-        padding: 16px;
-        border-radius: 8px;
+        width: 40%;
+        margin: 6px 40px 0 20px;
 
-        .header{
-            width: fit-content;
-            margin-bottom: 16px;
-            @include mx.flex-display(column, center, center);
-
-            .line{
-                width: 25%;
-                height: 3px;
-                background-color: cv.$text-brown;
-            }
+        .title{
+            font-weight: 500;
+            font-size: large;
         }
+    }
 
-        .content{
-            margin: 8px 0;
-            @include mx.flex-display(row, flex-start, flex-start);
+    .img-container{
+        width: 30%;
+        margin: auto;
 
-            .dot{
-                width: 10px;
-                height: 7px;
-                border-radius: 50%;
-                background-color: black;
-                margin: 8px 5px 0 0;
-            }
+        img{
+            width: 100%;
+            border-radius: 8px;
         }
     }
 }
