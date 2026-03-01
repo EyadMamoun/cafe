@@ -6,6 +6,7 @@ import { DessertMenuComponent } from './components/dessert-menu/dessert-menu.com
 import { Error404Component } from './components/error-404/error-404.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { AboutComponent } from './components/about/about.component';
+import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'dessert-menu', component: DessertMenuComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'cart', component: CartComponent },
   { path: '404', component: Error404Component },
 ];
