@@ -1,22 +1,38 @@
 <div class="details-container">
-    <div class="icon-circle">
-        <i [class]="iconClass"></i>
+    @if (isImgLeft) {
+    <div class="d-flex">
+        <div class="icon-circle">
+            <i [class]="iconClass"></i>
+        </div>
+
+        <div class="left-img-container">
+            <img [src]="imgURL" alt="about us">
+        </div>
     </div>
 
-    @if (isImgLeft) {
-    <div class="img-container">
-        <img [src]="imgURL" alt="about us">
+    <div class="details-section right-details-section">
+        <div>
+            <h3>{{contentTitle}}</h3>
+            <span class="title">{{contentSubtitle}}</span>
+            <p>{{content}}</p>
+        </div>
     </div>
     }
 
-    <div class="details-section">
-        <h3>{{contentTitle}}</h3>
-        <span class="title">{{contentSubtitle}}</span>
-        <p>{{content}}</p>
+    @if (isImgRight) {
+    <div class="d-flex">
+        <div class="icon-circle">
+            <i [class]="iconClass"></i>
+        </div>
+
+        <div class="details-section left-details-section">
+            <h3>{{contentTitle}}</h3>
+            <span class="title">{{contentSubtitle}}</span>
+            <p>{{content}}</p>
+        </div>
     </div>
 
-    @if(isImgRight){
-    <div class="img-container">
+    <div class="right-img-container">
         <img [src]="imgURL" alt="about us">
     </div>
     }

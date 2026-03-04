@@ -1,9 +1,13 @@
 @use "colors" as cv;
 @use "mixins" as mx;
+@use "variables" as vr;
 
 .details-container{
     margin: 100px 0;
     @include mx.flex-display(row, flex-start, flex-start);
+    @media (max-width: vr.$breakpoint-md){
+            @include mx.flex-display(row, flex-start, flex-start, wrap);
+        }
 
     .icon-circle{
         width: 50px;
@@ -15,6 +19,9 @@
         margin-left: 28px;
         position: relative;
         @include mx.flex-display();
+        @media (max-width: vr.$breakpoint-md){
+            font-size: large;
+        }
     }
 
     .icon-circle::after{
@@ -23,13 +30,20 @@
         top: 100%;
         left: 50%;
         transform: translateX(-50%);
-        height: 340px;
+        height: 300px;
         border-left: 3px dashed cv.$text-brown;
+        @media (max-width: vr.$breakpoint-md){
+            height: 330px;
+        }
     }
 
     .details-section{
-        width: 40%;
         margin: 6px 40px 0 20px;
+        @media (max-width: vr.$breakpoint-md){
+            p{
+                font-size: 12px;
+            }
+        }
 
         .title{
             font-weight: 500;
@@ -37,9 +51,41 @@
         }
     }
 
-    .img-container{
-        width: 30%;
+    .left-details-section{
+        width: 60%;
+        @media (max-width: vr.$breakpoint-md){
+            width: 100%;
+        }
+    }
+
+    .right-details-section{
+        width: 40%;
+        @media (max-width: vr.$breakpoint-md){
+            width: 70%;
+            margin-left: 125px;
+        }
+    }
+
+    .left-img-container{
+        width: 50%;
         margin: auto;
+        @media (max-width: vr.$breakpoint-md){
+            width: 60%;
+        }
+
+        img{
+            width: 100%;
+            border-radius: 8px;
+        }
+    }
+
+    .right-img-container{
+        width: 75%;
+        margin-right: 100px;
+        @media (max-width: vr.$breakpoint-md){
+            width: 60%;
+            margin: auto;
+        }
 
         img{
             width: 100%;

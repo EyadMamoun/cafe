@@ -9,6 +9,10 @@
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
+    @media (max-width: vr.$breakpoint-md){
+        height: 25vh;
+        background-size: contain;
+    }
 }
 
 .header{
@@ -24,6 +28,9 @@
     margin-left: 40px;
     position: relative;
     margin-bottom: 100px;
+    @media (max-width: vr.$breakpoint-md){
+        margin-left: 34px;
+    }
 }
 
 .circle::after{
