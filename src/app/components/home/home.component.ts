@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Icon, Product } from '../../types/products.type';
 import { ProductCardComponent } from '../../shared/components/product-card/product-card.component';
 import { Router } from '@angular/router';
@@ -9,10 +9,12 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   specialCoffee: Product[];
   specialDesserts: Product[];
   icons: Icon[];
+  screenWidth!: number;
+  isMobileView: boolean = false;
 
   constructor(private readonly _router: Router) {
     this.specialCoffee = [
@@ -101,6 +103,10 @@ export class HomeComponent {
         iconDescription: 'Dessert',
       },
     ];
+  }
+  ngOnInit(): void {
+    this.screenWidth = window.innerWidth;
+    this.isMobileView = this.screenWidth <= 768 ? true : false;
   }
 
   navigateToShop() {

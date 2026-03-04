@@ -32,14 +32,35 @@
       @include mx.flex-display(column, center, start);
     }
 
-    .price {
-      font-weight: 700;
-      font-size: 20px;
-      @media (max-width: vr.$breakpoint-md) {
-        font-size: 16px;
-      }
-    }
+    .price-counter{
+      @include mx.flex-display();
 
+      .price {
+        font-weight: 700;
+        font-size: 20px;
+        margin-right: 14px;
+        @media (max-width: vr.$breakpoint-md) {
+          font-size: 16px;
+          padding: 4px;
+          margin-right: 6px;
+        }
+      }
+
+      .counter-normal-product{
+        @include mx.flex-display();
+
+        .counter-btn{
+          padding: 0 7px !important;
+          font-size: large;
+          &:hover{
+            background-color: cv.$text-brown;
+            color: white;
+          }
+        }
+      }   
+    }
+    
+    
     .btn-style {
       font-size: small;
       background-color: cv.$text-brown;
@@ -49,11 +70,11 @@
       }
     }
   }
-
-  .counter{
+  
+  .counter-special-product{
     margin-bottom: 4px;
     @include mx.flex-display();
-
+  
     .counter-btn{
       padding: 0 7px !important;
       font-size: large;

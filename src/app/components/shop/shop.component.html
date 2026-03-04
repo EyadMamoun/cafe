@@ -2,10 +2,10 @@
     <div class="row">
         <span class="header-style">OUR SHOP</span>
         @for(product of coffeeProducts; track product.id){
-        <div class="col-3 products-alignment">
+        <div class="col-6 col-md-3 products-alignment">
             <app-product-card [imgSrc]="product.productImg" [imgAlt]="'coffee product'"
                 [productName]="product.productName" [productDescription]="product.productDescription"
-                [productPrice]="product.productPrice" [normalProduct]="true"></app-product-card>
+                [productPrice]="product.productPrice" [normalProduct]="true" />
         </div>
         }
     </div>

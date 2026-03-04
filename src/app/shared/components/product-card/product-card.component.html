@@ -7,7 +7,7 @@
   </div>
 
   @if(isCounter && specialProduct){
-  <div class="counter">
+  <div class="counter-special-product">
     <button class="btn counter-btn" (click)="removeItemBtn()">-</button>
     <span class="px-2 fs-5">{{counter}}</span>
     <button class="btn counter-btn" (click)="addItemBtn()">+</button>
@@ -15,14 +15,16 @@
   }
 
   <div class="product-pricing">
-    <span class="price">{{"EGP " + productPrice}}</span>
-    @if(isCounter && normalProduct){
-    <div class="counter">
-      <button class="btn counter-btn" (click)="removeItemBtn()">-</button>
-      <span class="px-2 fs-5">{{counter}}</span>
-      <button class="btn counter-btn" (click)="addItemBtn()">+</button>
+    <div class="price-counter">
+      <span class="price">{{"EGP " + productPrice}}</span>
+      @if(isCounter && normalProduct){
+      <div class="counter-normal-product">
+        <button class="btn counter-btn" (click)="removeItemBtn()">-</button>
+        <span class="px-2 fs-5">{{counter}}</span>
+        <button class="btn counter-btn" (click)="addItemBtn()">+</button>
+      </div>
+      }
     </div>
-    }
     <button class="btn btn-style" (click)="orderBtnClick()">{{btnState}}</button>
   </div>
   }
