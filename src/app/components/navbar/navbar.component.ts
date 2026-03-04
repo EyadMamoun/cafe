@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
-    this.mobileView = this.screenWidth <= 768 ? true : false;
+    this.mobileView = this.screenWidth <= 768;
     this._router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {

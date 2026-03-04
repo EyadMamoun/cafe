@@ -106,7 +106,7 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
-    this.isMobileView = this.screenWidth <= 768 ? true : false;
+    this.isMobileView = this.screenWidth <= 768;
   }
 
   navigateToShop() {

@@ -6,6 +6,10 @@
     <span class="description">{{productDescription}}</span>
   </div>
 
+  @if(!isCounter && specialProduct){
+  <div class="separating-div"></div>
+  }
+
   @if(isCounter && specialProduct){
   <div class="counter-special-product">
     <button class="btn counter-btn" (click)="removeItemBtn()">-</button>

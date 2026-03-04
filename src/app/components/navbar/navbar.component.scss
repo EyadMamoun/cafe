@@ -79,6 +79,7 @@
       border: 1px solid cv.$text-whitesmoke;
       border-radius: 3px;
       z-index: 1;
+      margin-right: 8px;
       @include mx.position(absolute, 15px, 10px);
       @include mx.flex-display(column, space-evenly, center);
     

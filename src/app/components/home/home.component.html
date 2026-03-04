@@ -52,7 +52,7 @@
         <div class="col-6 col-md-3">
           <app-product-card [imgSrc]="product.productImg" [productName]="product.productName"
             [productDescription]="product.productDescription" [productPrice]="product.productPrice"
-            [specialProduct]="true" />
+            [specialProduct]="!isMobileView" [normalProduct]="isMobileView" />
         </div>
         }
       </div>
