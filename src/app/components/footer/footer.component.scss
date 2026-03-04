@@ -1,6 +1,7 @@
 @use "colors" as cv;
 @use "fonts" as fr;
 @use "mixins" as mx;
+@use "variables" as vr;
 
 .footer-container {
   background-color: cv.$text-brown;
@@ -30,12 +31,18 @@
 
   .socialmedia-header {
     font-size: 17px;
+    @media (max-width: vr.$breakpoint-md){
+      margin-left: 24px;
+    }
   }
 
   .socialmedia-container {
     margin: 20px 0 0 15px;
     gap: 17px;
     @include mx.flex-display(column, center, start);
+    @media (max-width: vr.$breakpoint-md){
+      @include mx.flex-display(row, center, start);
+    }
 
     .icon-alignment {
       gap: 15px;
@@ -45,5 +52,13 @@
         font-size: 23px;
       }
     }
+  }
+
+  .rights{
+    font-size: small;
+    font-weight: 400;
+    margin-top: 10px;
+    text-align: center;
+    @include mx.flex-display();
   }
 }

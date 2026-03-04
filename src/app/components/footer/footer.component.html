@@ -1,8 +1,9 @@
 <div class="footer-container">
   <div class="row">
-    <div class="col-2">
+    <div class="col-6 col-md-2">
       <span class="shop-name">Second Cup</span>
     </div>
+    @if(!isMobileView){
     @for(content of footerContent; track $index){
     <div class="col-2">
       <div class="footer-content">
@@ -13,7 +14,8 @@
       </div>
     </div>
     }
-    <div class="col-2">
+    }
+    <div class="col-6 col-md-2">
       <span class="socialmedia-header">SOCIAL MEDIA</span>
       <div class="socialmedia-container">
         <div class="icon-alignment">
@@ -25,6 +27,11 @@
           <i class="fa-brands fa-whatsapp"></i>
         </div>
       </div>
+    </div>
+
+    <div class="col-12 rights">
+      <span>DESIGNED BY EYAD MAMOUN. ALL RIGHTS RESERVED</span>
+      <i class="fa-regular fa-copyright"></i>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FooterDetails } from '../../types/footer.type';
 
 @Component({
@@ -7,8 +7,10 @@ import { FooterDetails } from '../../types/footer.type';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
   footerContent: FooterDetails[];
+  screenWidth!: number;
+  isMobileView: boolean = false;
 
   constructor() {
     this.footerContent = [
@@ -29,5 +31,10 @@ export class FooterComponent {
         content: ['Plans & pricing', 'Set your products', 'Jobs'],
       },
     ];
+  }
+
+  ngOnInit(): void {
+    this.screenWidth = window.innerWidth;
+    this.isMobileView = this.screenWidth <= 768;
   }
 }
