@@ -9,6 +9,7 @@
         padding-bottom: 30px;
         border-radius: 8px;
         background-color: white;
+        padding: 16px 12px;
 
         .header-style {
             text-align: center;
@@ -19,16 +20,19 @@
 
         }
 
-        .col-1{
+        .btn-container{
             margin-top: 37px;
+            @media (max-width: vr.$breakpoint-md){
+                margin: 10px 0;
+            }
         }
 
-        .login-btn{
+        .register-btn{
             border: 1px solid cv.$text-brown;
             width: 100%;
         }
 
-        .login-btn:hover{
+        .register-btn:hover{
             background-color: cv.$text-brown;
             color: white;
         }

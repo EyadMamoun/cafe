@@ -6,22 +6,33 @@
     margin: 100px 0;
     @include mx.flex-display(row, flex-start, flex-start);
     @media (max-width: vr.$breakpoint-md){
-            @include mx.flex-display(row, flex-start, flex-start, wrap);
-        }
+        @include mx.flex-display(row, flex-start, flex-start, wrap);
+    }
 
-    .icon-circle{
+    .left-circle-dimensions{
         width: 50px;
         height: 50px;
+        font-size: x-large;
+    }
+
+    .right-circle-dimensions{
+        width: 50px;
+        height: 50px;
+        font-size: x-large;
+        @media (max-width: vr.$breakpoint-md){
+            width: 54px;
+            height: 39px;
+            font-size: large;
+        }
+    }
+
+    .icon-circle{
         background-color: cv.$text-brown;
         color: white;
         border-radius: 50%;
-        font-size: x-large;
         margin-left: 28px;
         position: relative;
         @include mx.flex-display();
-        @media (max-width: vr.$breakpoint-md){
-            font-size: large;
-        }
     }
 
     .icon-circle::after{
