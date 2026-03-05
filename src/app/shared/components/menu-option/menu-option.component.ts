@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../../../types/products.type';
-import { ProductCardComponent } from '../product-card/product-card.component';
+import { Router } from '@angular/router';
+import { CartService } from '../../../services/cart/cart.service';
 
 @Component({
   selector: 'app-menu-option',
-  imports: [ProductCardComponent],
+  imports: [],
   templateUrl: './menu-option.component.html',
   styleUrl: './menu-option.component.scss',
 })
@@ -13,11 +14,21 @@ export class MenuOptionComponent {
 
   isCounter: boolean = false;
   counter: number = 1;
+  cartNumber: number = 0;
   btnState: 'Order Now' | 'Add to cart' = 'Order Now';
+
+  constructor(
+    private readonly _router: Router,
+    private readonly _cartService: CartService,
+  ) {}
 
   orderBtnClick() {
     this.isCounter = true;
-    this.btnState = 'Add to cart';
+    if (this.btnState == 'Order Now') {
+      this.btnState = 'Add to cart';
+    } else {
+      this._cartService.addItem();
+    }
   }
 
   addItemBtn() {

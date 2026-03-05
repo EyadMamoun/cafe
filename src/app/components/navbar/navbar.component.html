@@ -8,17 +8,19 @@
           <span class="shop-name">Second Cup</span>
         </div>
         <div class="col-8 navbar-alignement">
-          <a href="/home"><span>HOME</span></a>
-          <a href="/coffee-menu"><span>COFFEE</span></a>
-          <a href="/dessert-menu"><span>DESSERT</span></a>
-          <a href="/shop"><span>SHOP</span></a>
-          <a href="/about"><span>ABOUT</span></a>
-          <a href="/login"><span>LOGIN</span></a>
+          <a routerLink="/home"><span>HOME</span></a>
+          <a routerLink="/coffee-menu"><span>COFFEE</span></a>
+          <a routerLink="/dessert-menu"><span>DESSERT</span></a>
+          <a routerLink="/shop"><span>SHOP</span></a>
+          <a routerLink="/about"><span>ABOUT</span></a>
+          <a routerLink="/login"><span>LOGIN</span></a>
         </div>
         <div class="col-1 icon-alignment">
           <div class="cart-container" (click)="goToCart()">
             <i class="fa-solid fa-cart-shopping"></i>
-            <div class="cart-counter">1</div>
+            @if(cartNumber !== 0){
+            <div class="cart-counter">{{cartNumber}}</div>
+            }
           </div>
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
@@ -31,6 +33,13 @@
       <div>
         <i class="fa-brands fa-java shop-icon"></i>
         <span class="shop-name">Second Cup</span>
+      </div>
+
+      <div class="mobile-cart-container" (click)="goToCart()">
+        <i class="fa-solid fa-cart-shopping fa-lg"></i>
+        @if(cartNumber !== 0){
+        <div class="mobile-cart-counter">{{cartNumber}}</div>
+        }
       </div>
 
       @if(menuButtonView) {
@@ -49,12 +58,12 @@
 
     @if(megaMenuView) {
     <div class="mobile-menu">
-      <a href="/home"><span>HOME</span></a>
-      <a href="/coffee-menu"><span>COFFEE</span></a>
-      <a href="/dessert-menu"><span>DESSERT</span></a>
-      <a href="/shop"><span>SHOP</span></a>
-      <a href="/about"><span>ABOUT</span></a>
-      <a href="/login"><span>LOGIN</span></a>
+      <a routerLink="/home"><span>HOME</span></a>
+      <a routerLink="/coffee-menu"><span>COFFEE</span></a>
+      <a routerLink="/dessert-menu"><span>DESSERT</span></a>
+      <a routerLink="/shop"><span>SHOP</span></a>
+      <a routerLink="/about"><span>ABOUT</span></a>
+      <a routerLink="/login"><span>LOGIN</span></a>
     </div>
     }
     }

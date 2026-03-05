@@ -55,7 +55,6 @@
             @include mx.position(absolute, auto, auto, 19px, 19px);
           }
         }
-
       }
     }
   }
@@ -88,6 +87,24 @@
         height: 3px;
         background-color: cv.$text-whitesmoke;
         border-radius: 50px;
+      }
+    }
+
+    .mobile-cart-container{
+      @include mx.position(absolute, 15px, 65px);
+
+      i{
+        color: white;
+      }
+
+      .mobile-cart-counter{
+        width: 13px;
+        height: 13px;
+        background-color: cv.$BG-dark-orange;
+        border-radius: 50%;
+        font-size: x-small;
+        @include mx.flex-display();
+        @include mx.position(absolute, -4px, -5px)
       }
     }
   }
