@@ -1,1 +1,28 @@
-<p>cart works!</p>
+<div class="container">
+    <div class="row sub-contianer">
+        <span class="header-style">YOUR CART</span>
+        @for (item of cart; track item.id) {
+        <div class="col-12">
+            <app-cart-item [cartItem]="item" />
+        </div>
+        }
+
+        <div class="checkout">
+            <span class="header">CART SUMMARY</span>
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <span> EGP 250</span>
+            </div>
+            <div class="shipping">
+                <span>Estimated Shipping</span>
+                <span>EGP 40</span>
+            </div>
+            <div class="line"></div>
+            <div class="total">
+                <span>TOTAL</span>
+                <span>EGP 290</span>
+            </div>
+            <button class="btn btn-warning checkout-btn">PROCEED TO CHECKOUT</button>
+        </div>
+    </div>
+</div>

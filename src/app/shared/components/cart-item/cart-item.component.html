@@ -1,0 +1,21 @@
+<div class="item-container">
+    <div class="item-details">
+        <img [src]="cartItem.productImg" alt="Item Image">
+        <div class="pricing">
+            <h4>{{cartItem.productName}}</h4>
+            <span class="price">{{'EGP ' + cartItem.productPrice}}</span>
+        </div>
+    </div>
+
+    <div class="btns">
+        <div class="counter">
+            <span class="minus">-</span>
+            <span>1</span>
+            <span class="plus">+</span>
+        </div>
+        <button class="btn btn-outline-danger">
+            <span>REMOVE</span>
+            <i class="fa-regular fa-trash-can"></i>
+        </button>
+    </div>
+</div>

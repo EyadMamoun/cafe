@@ -1,0 +1,76 @@
+@use "colors" as cv;
+@use "variables" as vr;
+@use "mixins" as mx;
+
+.item-container{
+    height: 20vh;
+    width: 90%;
+    border: 1px solid cv.$text-whitesmoke;
+    border-radius: 8px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 16px auto;
+    padding-right: 20px;
+    @include mx.flex-display(row, space-between, center);
+
+    .item-details{
+        width: 50%;
+        @include mx.flex-display(row, flex-start, center);
+
+        img{
+            width: 40%;
+            height: 20vh;
+            margin-right: 14px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        .pricing{
+            width: 100%;
+
+            .price{
+                font-size: 20px;
+            }
+        }
+    }
+
+    .btns{
+        width: 50%;
+        @include mx.flex-display(row, flex-end, center);
+        @media (max-width: vr.$breakpoint-md){
+            @include mx.flex-display(column);
+        }
+
+        .counter{
+            margin-right: 26px;
+            border-radius: 4px;
+            @media (max-width: vr.$breakpoint-md){
+                margin-right: 0;
+            }
+
+            span{
+                padding: 6px 14px;
+                border: 1px solid rgb(214, 214, 214);
+                font-size: 18px;
+                font-weight: 400;
+            }
+
+            .minus{
+                background-color: cv.$Background;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                cursor: pointer;
+            }
+
+            .plus{
+                background-color: cv.$Background;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                cursor: pointer;
+            }
+        }
+
+        i{
+            margin-left: 2px;
+        }
+    }
+}

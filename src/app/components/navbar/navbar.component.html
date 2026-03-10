@@ -57,7 +57,7 @@
     </div>
 
     @if(megaMenuView) {
-    <div class="mobile-menu">
+    <div class="mobile-menu" (click)="onMenuCancel()">
       <a routerLink="/home"><span>HOME</span></a>
       <a routerLink="/coffee-menu"><span>COFFEE</span></a>
       <a routerLink="/dessert-menu"><span>DESSERT</span></a>
