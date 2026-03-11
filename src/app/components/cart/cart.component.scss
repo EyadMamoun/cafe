@@ -2,10 +2,10 @@
 @use "colors" as cv;
 @use "mixins" as mx;
 
-.container{
+.container {
     padding: 48px 0;
 
-    .sub-contianer{
+    .sub-contianer {
         margin-top: 100px;
         border-radius: 8px;
         background-color: white;
@@ -19,43 +19,47 @@
             margin: 25px 0;
         }
 
-        .checkout{
+        .checkout {
             width: 30%;
             margin: 10px auto;
             @include mx.flex-display(column);
 
-            .header{
+            .header {
                 font-size: 26px;
                 font-weight: 500;
                 margin-bottom: 14px;
             }
 
-            .subtotal{
+            .subtotal {
                 width: 100%;
+                font-weight: 500;
                 @include mx.flex-display(row, space-between, center);
             }
 
-            .shipping{
+            .shipping {
                 width: 100%;
+                font-weight: 500;
                 @include mx.flex-display(row, space-between, center);
             }
 
-            .line{
+            .line {
                 width: 100%;
                 height: 1px;
                 background-color: cv.$Background;
-                margin: 12px 0;
+                margin: 10px 0;
             }
 
-            .total{
+            .total {
                 width: 100%;
                 margin-bottom: 14px;
+                font-weight: 500;
                 @include mx.flex-display(row, space-between, center);
             }
 
-            .checkout-btn{
-                border-radius: 20px;
+            .checkout-btn {
+                border-radius: 30px;
+                padding: 8px 28px;
             }
         }
-    }   
+    }
 }
