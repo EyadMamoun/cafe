@@ -23,6 +23,9 @@
             width: 30%;
             margin: 10px auto;
             @include mx.flex-display(column);
+            @media (max-width: vr.$breakpoint-md){
+                width: 90%;
+            }
 
             .header {
                 font-size: 26px;

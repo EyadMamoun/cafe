@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../../types/products.type';
 
 @Component({
@@ -7,6 +7,12 @@ import { Product } from '../../../types/products.type';
   templateUrl: './cart-item.component.html',
   styleUrl: './cart-item.component.scss',
 })
-export class CartItemComponent {
+export class CartItemComponent implements OnInit {
   @Input() cartItem!: Product;
+
+  isMobileView: boolean = false;
+
+  ngOnInit(): void {
+    this.isMobileView = window.innerWidth < 768;
+  }
 }
