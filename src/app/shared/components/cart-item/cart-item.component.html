@@ -14,20 +14,16 @@
         <h4 class="title">{{cartItem.productName}}</h4>
         }
         <div class="counter">
+            @if(isMobileView){
+            <span class="price">{{'EGP ' + cartItem.productPrice}}</span>
+            }
             <span class="minus">-</span>
             <span>1</span>
             <span class="plus">+</span>
         </div>
-        <div class="mobile-view">
-            @if(isMobileView){
-            <span>{{'EGP ' + cartItem.productPrice}}</span>
-            }
-            <button class="btn btn-outline-danger">
-                @if(!isMobileView){
-                <span>REMOVE</span>
-                }
-                <i class="fa-regular fa-trash-can"></i>
-            </button>
-        </div>
+        <button class="btn btn-outline-danger">
+            <span>REMOVE</span>
+            <i class="fa-regular fa-trash-can"></i>
+        </button>
     </div>
 </div>

@@ -12,7 +12,7 @@
     padding-right: 20px;
     @include mx.flex-display(row, space-between, center);
     @media (max-width: vr.$breakpoint-md){
-        height: 12vh;
+        height: 14vh;
         padding-right: 16px;
     }
 
@@ -30,7 +30,7 @@
             border-top-left-radius: 8px;
             border-bottom-left-radius: 8px;
             @media (max-width: vr.$breakpoint-md){
-                height: 12vh;
+                height: 14vh;
                 width: 100%;
             }
         }
@@ -63,6 +63,11 @@
                 margin-bottom: 6px;
             }
 
+            .price{
+                margin-right: 8px;
+                border: none;
+            }
+
             span{
                 padding: 6px 14px;
                 border: 1px solid rgb(214, 214, 214);
@@ -89,16 +94,10 @@
             }
         }
 
-        .mobile-view{
-            @media (max-width: vr.$breakpoint-md){
-                width: 100%;
-                @include mx.flex-display(row, space-evenly, center);
-            }
-        }
-
         .btn{
             @media (max-width: vr.$breakpoint-md){
-                padding: 3px;
+                padding: 3px 12px;
+                font-size: small;
             }
         }
 
