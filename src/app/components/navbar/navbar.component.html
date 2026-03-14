@@ -3,7 +3,7 @@
     @if(!mobileView){
     <div class="container">
       <div class="row">
-        <div class="col-3">
+        <div class="col-3" (click)="goToHome()">
           <i class="fa-brands fa-java shop-icon"></i>
           <span class="shop-name">Second Cup</span>
         </div>
@@ -30,7 +30,7 @@
 
     @if(mobileView){
     <div class="mobile-view">
-      <div>
+      <div (click)="goToHome()">
         <i class="fa-brands fa-java shop-icon"></i>
         <span class="shop-name">Second Cup</span>
       </div>

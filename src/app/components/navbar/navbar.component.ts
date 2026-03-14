@@ -56,4 +56,8 @@ export class NavbarComponent implements OnInit {
   goToCart() {
     this._router.navigateByUrl('/cart');
   }
+
+  goToHome() {
+    this._router.navigateByUrl('/home');
+  }
 }

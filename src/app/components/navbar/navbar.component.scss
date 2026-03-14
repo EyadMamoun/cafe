@@ -19,7 +19,14 @@
 
       .col-3 {
         padding-left: 48px;
-
+        
+        i{
+          cursor: pointer;
+        }
+        
+        span{
+          cursor: pointer;
+        }
       }
       
       .navbar-alignement{

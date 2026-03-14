@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../../../types/products.type';
-import { Router } from '@angular/router';
 import { CartService } from '../../../services/cart/cart.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-menu-option',
@@ -18,8 +18,8 @@ export class MenuOptionComponent {
   btnState: 'Order Now' | 'Add to cart' = 'Order Now';
 
   constructor(
-    private readonly _router: Router,
     private readonly _cartService: CartService,
+    private readonly toastr: ToastrService,
   ) {}
 
   orderBtnClick() {
@@ -28,6 +28,9 @@ export class MenuOptionComponent {
       this.btnState = 'Add to cart';
     } else {
       this._cartService.addItem();
+      this.btnState = 'Order Now';
+      this.isCounter = false;
+      this.toastr.success('Product added to cart');
     }
   }
 
