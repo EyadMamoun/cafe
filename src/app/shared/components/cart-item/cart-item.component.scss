@@ -66,6 +66,7 @@
             .price{
                 margin-right: 8px;
                 border: none;
+                font-size: 14px;
             }
 
             span{
@@ -96,7 +97,7 @@
 
         .btn{
             @media (max-width: vr.$breakpoint-md){
-                padding: 3px 12px;
+                padding: 4px 12px;
                 font-size: small;
             }
         }
