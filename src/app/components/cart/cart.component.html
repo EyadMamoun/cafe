@@ -7,6 +7,14 @@
         </div>
         }
 
+        @if(isCartEmpty){
+        <div class="empty-view">
+            <i class="fa-solid fa-bag-shopping fa-xl"></i>
+            <span>CART IS EMPTY</span>
+        </div>
+        }
+
+        @if(!isCartEmpty){
         <div class="checkout">
             <span class="header">CART SUMMARY</span>
             <div class="subtotal">
@@ -24,5 +32,6 @@
             </div>
             <button class="btn btn-warning checkout-btn">PROCEED TO CHECKOUT</button>
         </div>
+        }
     </div>
 </div>

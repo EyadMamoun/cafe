@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../../types/products.type';
 import { CartItemComponent } from '../../shared/components/cart-item/cart-item.component';
+import { CartService } from '../../services/cart/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -8,23 +9,16 @@ import { CartItemComponent } from '../../shared/components/cart-item/cart-item.c
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
 })
-export class CartComponent {
-  cart: Product[] = [
-    {
-      id: 1,
-      productImg: 'assets/Images/Turkish_Coffee.png',
-      productName: 'Turkish Coffee',
-      productDescription:
-        'Finely ground coffee beans boiled and served in a cup.',
-      productPrice: 70,
-    },
-    {
-      id: 2,
-      productImg: 'assets/Images/Salted_caramel.png',
-      productName: 'Iced Salted Caramel',
-      productDescription:
-        'Caramel espresso with whipped cream and salted sugar.',
-      productPrice: 180,
-    },
-  ];
+export class CartComponent implements OnInit {
+  cart: Product[] = [];
+  isCartEmpty: boolean = true;
+
+  constructor(private readonly _cartService: CartService) {}
+
+  ngOnInit(): void {
+    this._cartService.cartElement$.subscribe((value) => {
+      this.isCartEmpty = value.length == 0;
+      this.cart = value;
+    });
+  }
 }

@@ -19,9 +19,22 @@
             margin: 25px 0;
         }
 
+        .empty-view{
+            padding: 80px 0 100px 0;
+            font-size: 40px;
+            font-weight: 700;
+            color: grey;
+            opacity: 0.2;
+            @include mx.flex-display(column);
+
+            i{
+                margin-bottom: 24px;
+            }
+        }
+
         .checkout {
             width: 30%;
-            margin: 10px auto;
+            margin: 24px auto;
             @include mx.flex-display(column);
             @media (max-width: vr.$breakpoint-md){
                 width: 90%;

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CartService } from '../../../services/cart/cart.service';
 import { ToastrService } from 'ngx-toastr';
+import { Product } from '../../../types/products.type';
 
 @Component({
   selector: 'app-product-card',
@@ -17,6 +18,7 @@ export class ProductCardComponent {
   @Input() showPrice: boolean = true;
   @Input() specialProduct: boolean = false;
   @Input() normalProduct: boolean = false;
+  @Input() selectedProduct!: Product;
 
   isCounter: boolean = false;
   counter: number = 1;
@@ -32,7 +34,7 @@ export class ProductCardComponent {
     if (this.btnState == 'Order Now') {
       this.btnState = 'Add to cart';
     } else {
-      this._cartService.addItem();
+      this._cartService.addItem(this.selectedProduct);
       this.btnState = 'Order Now';
       this.isCounter = false;
       this.toastr.success('Product added to cart');

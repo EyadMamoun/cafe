@@ -16,6 +16,7 @@ export class MenuOptionComponent {
   counter: number = 1;
   cartNumber: number = 0;
   btnState: 'Order Now' | 'Add to cart' = 'Order Now';
+  @Input() selectedProduct!: Product;
 
   constructor(
     private readonly _cartService: CartService,
@@ -27,7 +28,7 @@ export class MenuOptionComponent {
     if (this.btnState == 'Order Now') {
       this.btnState = 'Add to cart';
     } else {
-      this._cartService.addItem();
+      this._cartService.addItem(this.selectedProduct);
       this.btnState = 'Order Now';
       this.isCounter = false;
       this.toastr.success('Product added to cart');
