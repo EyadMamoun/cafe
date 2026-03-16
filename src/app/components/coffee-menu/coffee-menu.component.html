@@ -17,8 +17,8 @@
 
         <!-- Hot Drinks Menu -->
         <div class="menu-container">
-            @for (item of hotCoffee; track item.id) {
-            <app-menu-option class="item-positioning" [menuItems]="item"></app-menu-option>
+            @for (item of hotCoffee; track $index) {
+            <app-menu-option class="item-positioning" [menuItems]="item" [selectedProduct]="item" />
             }
         </div>
 
@@ -30,8 +30,8 @@
 
         <!-- Cold Drinks Menu -->
         <div class="menu-container">
-            @for (item of icedCoffee; track item.id) {
-            <app-menu-option class="item-positioning" [menuItems]="item"></app-menu-option>
+            @for (item of icedCoffee; track $index) {
+            <app-menu-option class="item-positioning" [menuItems]="item" [selectedProduct]="item" />
             }
         </div>
     </div>

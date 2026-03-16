@@ -11,7 +11,7 @@ import { Product } from '../../types/products.type';
 export class ShopComponent {
   coffeeProducts: Product[] = [
     {
-      id: 1,
+      id: 9,
       productName: 'Espresso Forte Dark 312g',
       productDescription:
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
@@ -19,7 +19,7 @@ export class ShopComponent {
       productPrice: 445,
     },
     {
-      id: 2,
+      id: 9,
       productName: 'Espresso Forte Dark 312g',
       productDescription:
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
@@ -27,7 +27,7 @@ export class ShopComponent {
       productPrice: 445,
     },
     {
-      id: 3,
+      id: 9,
       productName: 'Espresso Forte Dark 312g',
       productDescription:
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
@@ -35,7 +35,7 @@ export class ShopComponent {
       productPrice: 445,
     },
     {
-      id: 4,
+      id: 9,
       productName: 'Espresso Forte Dark 312g',
       productDescription:
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
@@ -43,7 +43,7 @@ export class ShopComponent {
       productPrice: 445,
     },
     {
-      id: 5,
+      id: 9,
       productName: 'Espresso Forte Dark 312g',
       productDescription:
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
@@ -51,7 +51,7 @@ export class ShopComponent {
       productPrice: 445,
     },
     {
-      id: 6,
+      id: 9,
       productName: 'Espresso Forte Dark 312g',
       productDescription:
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
@@ -59,7 +59,7 @@ export class ShopComponent {
       productPrice: 445,
     },
     {
-      id: 7,
+      id: 9,
       productName: 'Espresso Forte Dark 312g',
       productDescription:
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
@@ -67,7 +67,7 @@ export class ShopComponent {
       productPrice: 445,
     },
     {
-      id: 8,
+      id: 9,
       productName: 'Espresso Forte Dark 312g',
       productDescription:
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',

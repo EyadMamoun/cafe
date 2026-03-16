@@ -4,8 +4,8 @@
 
         <!-- Dessert Menu -->
         <div class="menu-container">
-            @for (item of dessert; track item.id) {
-            <app-menu-option class="item-positioning" [menuItems]="item"></app-menu-option>
+            @for (item of dessert; track $index) {
+            <app-menu-option class="item-positioning" [menuItems]="item" [selectedProduct]="item" />
             }
         </div>
     </div>

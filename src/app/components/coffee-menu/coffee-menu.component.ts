@@ -27,7 +27,7 @@ export class CoffeeMenuComponent {
       productPrice: 70,
     },
     {
-      id: 2,
+      id: 1,
       productImg: 'assets/Images/Turkish_Coffee.png',
       productName: 'Turkish Coffee',
       productDescription:
@@ -35,7 +35,7 @@ export class CoffeeMenuComponent {
       productPrice: 70,
     },
     {
-      id: 3,
+      id: 1,
       productImg: 'assets/Images/Turkish_Coffee.png',
       productName: 'Turkish Coffee',
       productDescription:
@@ -43,7 +43,7 @@ export class CoffeeMenuComponent {
       productPrice: 70,
     },
     {
-      id: 4,
+      id: 1,
       productImg: 'assets/Images/Turkish_Coffee.png',
       productName: 'Turkish Coffee',
       productDescription:
@@ -53,15 +53,7 @@ export class CoffeeMenuComponent {
   ];
   icedCoffee: Product[] = [
     {
-      id: 1,
-      productImg: 'assets/Images/Salted_caramel.png',
-      productName: 'Iced Salted Caramel',
-      productDescription:
-        'Caramel espresso with whipped cream and salted sugar.',
-      productPrice: 180,
-    },
-    {
-      id: 2,
+      id: 3,
       productImg: 'assets/Images/Salted_caramel.png',
       productName: 'Iced Salted Caramel',
       productDescription:
@@ -77,7 +69,15 @@ export class CoffeeMenuComponent {
       productPrice: 180,
     },
     {
-      id: 4,
+      id: 3,
+      productImg: 'assets/Images/Salted_caramel.png',
+      productName: 'Iced Salted Caramel',
+      productDescription:
+        'Caramel espresso with whipped cream and salted sugar.',
+      productPrice: 180,
+    },
+    {
+      id: 3,
       productImg: 'assets/Images/Salted_caramel.png',
       productName: 'Iced Salted Caramel',
       productDescription:
