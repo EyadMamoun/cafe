@@ -16,4 +16,21 @@ export class CartService {
     this.cartItemsSubject.next(this.cartItemsSubject.value + 1);
     this.cartElementSubject.next([...this.cartElementSubject.value, element]);
   }
+
+  removeItem(id: number) {
+    this.cartElementSubject.next(
+      this.cartElementSubject.value.filter((item) => {
+        return item.id !== id;
+      }),
+    );
+    this.cartItemsSubject.next(this.cartItemsSubject.value - 1);
+  }
+
+  isItemExist(id: number): boolean {
+    const isItemExist = this.cartElementSubject.value.find((item) => {
+      return item.id == id;
+    });
+
+    return !!isItemExist;
+  }
 }

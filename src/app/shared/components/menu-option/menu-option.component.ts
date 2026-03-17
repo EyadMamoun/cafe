@@ -28,10 +28,15 @@ export class MenuOptionComponent {
     if (this.btnState == 'Order Now') {
       this.btnState = 'Add to cart';
     } else {
-      this._cartService.addItem(this.selectedProduct);
-      this.btnState = 'Order Now';
-      this.isCounter = false;
-      this.toastr.success('Product added to cart');
+      if (this._cartService.isItemExist(this.selectedProduct.id)) {
+        this.toastr.error('Item already exist in your cart');
+      } else {
+        this.selectedProduct.counts = this.counter;
+        this._cartService.addItem(this.selectedProduct);
+        this.btnState = 'Order Now';
+        this.isCounter = false;
+        this.toastr.success('Product added to cart');
+      }
     }
   }
 

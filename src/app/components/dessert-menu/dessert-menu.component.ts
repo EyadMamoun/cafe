@@ -16,6 +16,7 @@ export class DessertMenuComponent {
       productName: 'Classic Tiramisu',
       productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
       productPrice: 220,
+      counts: 1,
     },
     {
       id: 5,
@@ -23,6 +24,7 @@ export class DessertMenuComponent {
       productName: 'Classic Tiramisu',
       productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
       productPrice: 220,
+      counts: 1,
     },
     {
       id: 5,
@@ -30,6 +32,7 @@ export class DessertMenuComponent {
       productName: 'Classic Tiramisu',
       productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
       productPrice: 220,
+      counts: 1,
     },
     {
       id: 5,
@@ -37,6 +40,7 @@ export class DessertMenuComponent {
       productName: 'Classic Tiramisu',
       productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
       productPrice: 220,
+      counts: 1,
     },
   ];
 }

@@ -17,6 +17,7 @@ export class ShopComponent {
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
       productImg: 'assets/Images/coffee_beans_product.png',
       productPrice: 445,
+      counts: 1,
     },
     {
       id: 9,
@@ -25,6 +26,7 @@ export class ShopComponent {
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
       productImg: 'assets/Images/coffee_beans_product.png',
       productPrice: 445,
+      counts: 1,
     },
     {
       id: 9,
@@ -33,6 +35,7 @@ export class ShopComponent {
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
       productImg: 'assets/Images/coffee_beans_product.png',
       productPrice: 445,
+      counts: 1,
     },
     {
       id: 9,
@@ -41,6 +44,7 @@ export class ShopComponent {
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
       productImg: 'assets/Images/coffee_beans_product.png',
       productPrice: 445,
+      counts: 1,
     },
     {
       id: 9,
@@ -49,6 +53,7 @@ export class ShopComponent {
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
       productImg: 'assets/Images/coffee_beans_product.png',
       productPrice: 445,
+      counts: 1,
     },
     {
       id: 9,
@@ -57,6 +62,7 @@ export class ShopComponent {
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
       productImg: 'assets/Images/coffee_beans_product.png',
       productPrice: 445,
+      counts: 1,
     },
     {
       id: 9,
@@ -65,6 +71,7 @@ export class ShopComponent {
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
       productImg: 'assets/Images/coffee_beans_product.png',
       productPrice: 445,
+      counts: 1,
     },
     {
       id: 9,
@@ -73,6 +80,7 @@ export class ShopComponent {
         'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
       productImg: 'assets/Images/coffee_beans_product.png',
       productPrice: 445,
+      counts: 1,
     },
   ];
 }

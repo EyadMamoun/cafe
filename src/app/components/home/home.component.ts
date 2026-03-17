@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
         productName: 'Turkish Coffee',
         productDescription: 'Finely ground coffee boiled and served in a cup.',
         productPrice: 70,
+        counts: 1,
       },
       {
         id: 2,
@@ -32,6 +33,7 @@ export class HomeComponent implements OnInit {
         productDescription:
           'A Latin twist of rich espresso and special milk with a sweet finish.',
         productPrice: 165,
+        counts: 1,
       },
       {
         id: 3,
@@ -40,6 +42,7 @@ export class HomeComponent implements OnInit {
         productDescription:
           'Caramel cream espresso with whipped cream and salted sugar.',
         productPrice: 180,
+        counts: 1,
       },
       {
         id: 4,
@@ -48,6 +51,7 @@ export class HomeComponent implements OnInit {
         productDescription:
           'Freshly brewed filtered coffee with a smooth, clean finish.',
         productPrice: 85,
+        counts: 1,
       },
     ];
 
@@ -59,6 +63,7 @@ export class HomeComponent implements OnInit {
         productDescription:
           'Espresso-soaked ladyfingers with mascarpone cream and cocoa.',
         productPrice: 220,
+        counts: 1,
       },
       {
         id: 6,
@@ -67,6 +72,7 @@ export class HomeComponent implements OnInit {
         productDescription:
           'Golden, tender donut crafted with rich, sweet glaze.',
         productPrice: 145,
+        counts: 1,
       },
       {
         id: 7,
@@ -74,6 +80,7 @@ export class HomeComponent implements OnInit {
         productName: 'Cinnamon Churros',
         productDescription: 'Crispy churros coated in cinnamon sugar.',
         productPrice: 190,
+        counts: 1,
       },
       {
         id: 8,
@@ -82,6 +89,7 @@ export class HomeComponent implements OnInit {
         productDescription:
           'Creamy cheesecake topped with Lotus biscuit crumble.',
         productPrice: 160,
+        counts: 1,
       },
     ];
 

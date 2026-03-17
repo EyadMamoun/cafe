@@ -25,6 +25,7 @@ export class CoffeeMenuComponent {
       productDescription:
         'Finely ground coffee beans boiled and served in a cup.',
       productPrice: 70,
+      counts: 1,
     },
     {
       id: 1,
@@ -33,6 +34,7 @@ export class CoffeeMenuComponent {
       productDescription:
         'Finely ground coffee beans boiled and served in a cup.',
       productPrice: 70,
+      counts: 1,
     },
     {
       id: 1,
@@ -41,6 +43,7 @@ export class CoffeeMenuComponent {
       productDescription:
         'Finely ground coffee beans boiled and served in a cup.',
       productPrice: 70,
+      counts: 1,
     },
     {
       id: 1,
@@ -49,6 +52,7 @@ export class CoffeeMenuComponent {
       productDescription:
         'Finely ground coffee beans boiled and served in a cup.',
       productPrice: 70,
+      counts: 1,
     },
   ];
   icedCoffee: Product[] = [
@@ -59,6 +63,7 @@ export class CoffeeMenuComponent {
       productDescription:
         'Caramel espresso with whipped cream and salted sugar.',
       productPrice: 180,
+      counts: 1,
     },
     {
       id: 3,
@@ -67,6 +72,7 @@ export class CoffeeMenuComponent {
       productDescription:
         'Caramel espresso with whipped cream and salted sugar.',
       productPrice: 180,
+      counts: 1,
     },
     {
       id: 3,
@@ -75,6 +81,7 @@ export class CoffeeMenuComponent {
       productDescription:
         'Caramel espresso with whipped cream and salted sugar.',
       productPrice: 180,
+      counts: 1,
     },
     {
       id: 3,
@@ -83,6 +90,7 @@ export class CoffeeMenuComponent {
       productDescription:
         'Caramel espresso with whipped cream and salted sugar.',
       productPrice: 180,
+      counts: 1,
     },
   ];
   isHotDrinks: boolean = true;

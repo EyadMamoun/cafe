@@ -12,6 +12,8 @@ import { CartService } from '../../services/cart/cart.service';
 export class CartComponent implements OnInit {
   cart: Product[] = [];
   isCartEmpty: boolean = true;
+  subtotal: number = 0;
+  total: number = 0;
 
   constructor(private readonly _cartService: CartService) {}
 
@@ -19,6 +21,10 @@ export class CartComponent implements OnInit {
     this._cartService.cartElement$.subscribe((value) => {
       this.isCartEmpty = value.length == 0;
       this.cart = value;
+      value.forEach((item) => {
+        this.subtotal += item.counts * item.productPrice;
+      });
+      this.total = this.subtotal + 40;
     });
   }
 }
