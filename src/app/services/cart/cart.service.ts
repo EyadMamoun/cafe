@@ -12,9 +12,15 @@ export class CartService {
   private cartElementSubject = new BehaviorSubject<Product[]>([]);
   cartElement$ = this.cartElementSubject.asObservable();
 
+  private cartSubtotalSubject = new BehaviorSubject<number>(0);
+  cartSubtotal$ = this.cartSubtotalSubject.asObservable();
+
   addItem(element: Product) {
     this.cartItemsSubject.next(this.cartItemsSubject.value + 1);
     this.cartElementSubject.next([...this.cartElementSubject.value, element]);
+    this.cartSubtotalSubject.next(
+      this.cartSubtotalSubject.value + element.productPrice * element.counts,
+    );
   }
 
   removeItem(id: number) {
@@ -24,6 +30,12 @@ export class CartService {
       }),
     );
     this.cartItemsSubject.next(this.cartItemsSubject.value - 1);
+    this.cartSubtotalSubject.next(0);
+    this.cartElementSubject.value.forEach((item) => {
+      this.cartSubtotalSubject.next(
+        this.cartSubtotalSubject.value + item.productPrice * item.counts,
+      );
+    });
   }
 
   isItemExist(id: number): boolean {
@@ -32,5 +44,13 @@ export class CartService {
     });
 
     return !!isItemExist;
+  }
+
+  decreaseCartItemCount(itemPrice: number) {
+    this.cartSubtotalSubject.next(this.cartSubtotalSubject.value - itemPrice);
+  }
+
+  increaseCartItemCount(itemPrice: number) {
+    this.cartSubtotalSubject.next(this.cartSubtotalSubject.value + itemPrice);
   }
 }

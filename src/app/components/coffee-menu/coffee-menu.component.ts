@@ -1,14 +1,22 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Product } from '../../types/products.type';
 import { MenuOptionComponent } from '../../shared/components/menu-option/menu-option.component';
+import { SubtotalComponent } from '../../shared/components/subtotal/subtotal.component';
+import { CartService } from '../../services/cart/cart.service';
 
 @Component({
   selector: 'app-coffee-menu',
-  imports: [MenuOptionComponent],
+  imports: [MenuOptionComponent, SubtotalComponent],
   templateUrl: './coffee-menu.component.html',
   styleUrl: './coffee-menu.component.scss',
 })
-export class CoffeeMenuComponent {
+export class CoffeeMenuComponent implements OnInit {
   @ViewChild('coldDrinksSection') coldDrinksSection!: ElementRef<HTMLElement>;
 
   @HostListener('window:scroll', [])
@@ -95,6 +103,16 @@ export class CoffeeMenuComponent {
   ];
   isHotDrinks: boolean = true;
   isColdDrinks: boolean = false;
+  subtotal: number = 0;
+  showSubtotal: boolean = true;
+
+  constructor(private readonly _cartService: CartService) {}
+
+  ngOnInit(): void {
+    this._cartService.cartSubtotal$.subscribe((value) => {
+      this.subtotal = value;
+    });
+  }
 
   viewHotDrinks() {
     this.isHotDrinks = true;
@@ -110,5 +128,9 @@ export class CoffeeMenuComponent {
     const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
     window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+
+  closeSubtotal() {
+    this.showSubtotal = false;
   }
 }

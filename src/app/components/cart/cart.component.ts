@@ -21,9 +21,10 @@ export class CartComponent implements OnInit {
     this._cartService.cartElement$.subscribe((value) => {
       this.isCartEmpty = value.length == 0;
       this.cart = value;
-      value.forEach((item) => {
-        this.subtotal += item.counts * item.productPrice;
-      });
+    });
+
+    this._cartService.cartSubtotal$.subscribe((value) => {
+      this.subtotal = value;
       this.total = this.subtotal + 40;
     });
   }

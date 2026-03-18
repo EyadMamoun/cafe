@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Icon, Product } from '../../types/products.type';
 import { ProductCardComponent } from '../../shared/components/product-card/product-card.component';
 import { Router } from '@angular/router';
+import { SubtotalComponent } from '../../shared/components/subtotal/subtotal.component';
+import { CartService } from '../../services/cart/cart.service';
 
 @Component({
   selector: 'app-home',
-  imports: [ProductCardComponent],
+  imports: [ProductCardComponent, SubtotalComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -15,8 +17,13 @@ export class HomeComponent implements OnInit {
   icons: Icon[];
   screenWidth!: number;
   isMobileView: boolean = false;
+  subtotal: number = 0;
+  showSubtotal: boolean = true;
 
-  constructor(private readonly _router: Router) {
+  constructor(
+    private readonly _router: Router,
+    private readonly _cartService: CartService,
+  ) {
     this.specialCoffee = [
       {
         id: 1,
@@ -115,6 +122,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
     this.isMobileView = this.screenWidth <= 768;
+    this._cartService.cartSubtotal$.subscribe((value) => {
+      this.subtotal = value;
+    });
   }
 
   navigateToShop() {
@@ -123,5 +133,9 @@ export class HomeComponent implements OnInit {
 
   onOrder() {
     this._router.navigateByUrl('/coffee-menu');
+  }
+
+  closeSubtotal() {
+    this.showSubtotal = false;
   }
 }

@@ -17,9 +17,9 @@
             @if(isMobileView){
             <span class="price">{{'EGP ' + cartItem.productPrice}}</span>
             }
-            <span class="minus" (click)="decreaseItemCounts()">-</span>
+            <span class="minus" (click)="decreaseItemCounts(cartItem.productPrice)">-</span>
             <span>{{cartItem.counts}}</span>
-            <span class="plus" (click)="increaseItemCounts()">+</span>
+            <span class="plus" (click)="increaseItemCounts(cartItem.productPrice)">+</span>
         </div>
         <button class="btn btn-outline-danger" (click)="removeCartItem(cartItem.id)">
             <span>REMOVE</span>

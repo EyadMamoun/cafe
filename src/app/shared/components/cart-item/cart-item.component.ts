@@ -23,11 +23,13 @@ export class CartItemComponent implements OnInit {
     this._cartService.removeItem(id);
   }
 
-  decreaseItemCounts() {
+  decreaseItemCounts(price: number) {
     this.cartItem.counts--;
+    this._cartService.decreaseCartItemCount(price);
   }
 
-  increaseItemCounts() {
+  increaseItemCounts(price: number) {
     this.cartItem.counts++;
+    this._cartService.increaseCartItemCount(price);
   }
 }

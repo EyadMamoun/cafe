@@ -1,0 +1,31 @@
+@use "colors" as cv;
+@use "variables" as vr;
+@use "mixins" as mx;
+
+.subtotal-container{
+    width: 25%;
+    height: 50px;
+    background-color: #b49773;
+    color: white;
+    padding: 20px;
+    border-radius: 30px;
+    font-size: large;
+    font-weight: 500;
+    @include mx.position(fixed, auto, 37.5%, 20px, auto);
+    @include mx.flex-display(row, space-between);
+    @media (max-width: vr.$breakpoint-md){
+        width: 90%;
+        @include mx.position(fixed, auto, 5%, 20px, auto);
+    }
+
+    .close{
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: cv.$text-brown;
+        font-weight: 400;
+        cursor: pointer;
+        @include mx.position(absolute, -10px, 0);
+        @include mx.flex-display();
+    }
+}
