@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../types/products.type';
 import { CartItemComponent } from '../../shared/components/cart-item/cart-item.component';
 import { CartService } from '../../services/cart/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -15,7 +16,10 @@ export class CartComponent implements OnInit {
   subtotal: number = 0;
   total: number = 0;
 
-  constructor(private readonly _cartService: CartService) {}
+  constructor(
+    private readonly _cartService: CartService,
+    private readonly _router: Router,
+  ) {}
 
   ngOnInit(): void {
     this._cartService.cartElement$.subscribe((value) => {
@@ -27,5 +31,9 @@ export class CartComponent implements OnInit {
       this.subtotal = value;
       this.total = this.subtotal + 40;
     });
+  }
+
+  goToCheckout() {
+    this._router.navigateByUrl('/checkout');
   }
 }
