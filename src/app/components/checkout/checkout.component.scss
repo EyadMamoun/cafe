@@ -1,0 +1,13 @@
+@use "mixins" as mx;
+@use "variables" as vr;
+
+.container{
+    padding: 200px 0;
+    text-align: center;
+    font-size: x-large;
+    font-weight: 500;
+    @include mx.flex-display(column);
+    @media (max-width: vr.$breakpoint-md){
+        font-size: large;
+    }
+}
