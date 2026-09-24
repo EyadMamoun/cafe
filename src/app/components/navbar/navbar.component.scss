@@ -18,7 +18,7 @@
       color: cv.$white-color;
 
       .col-3 {
-        padding-left: 48px;
+        padding-left: 40px;
         
         i{
           cursor: pointer;
@@ -31,7 +31,7 @@
       
       .navbar-alignement{
         gap: 40px;
-        font-size: medium;
+        font-size: 17px;
         @include mx.flex-display();
 
         a {
@@ -77,6 +77,10 @@
   .mobile-view {
     padding: 15px;
     @include mx.flex-display(row, space-between, center);
+
+    .logo-container{
+      width: 10%;
+    }
 
     .mobile-navbar {
       width: 30px;
@@ -139,9 +143,9 @@
   .shop-name {
     font-family: fr.$Shop-Name;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 600;
     font-style: normal;
-    font-size: 35px;
+    font-size: 30px;
     color: cv.$white-color;
     @media (max-width: vr.$breakpoint-md) {
       font-size: 20px;

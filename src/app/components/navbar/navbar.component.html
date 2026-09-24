@@ -3,9 +3,12 @@
     @if(!mobileView){
     <div class="container">
       <div class="row">
-        <div class="col-3" (click)="goToHome()">
-          <i class="fa-brands fa-java shop-icon"></i>
-          <span class="shop-name">Second Cup</span>
+        <div class="col-3 d-flex align-items-center" (click)="goToHome()">
+          <!-- <i class="fa-brands fa-java shop-icon"></i> -->
+          <div class="w-25 mb-2">
+            <img class="w-100" src="../../../assets/Images/SecondCup-transparent.png" alt="logo">
+          </div>
+          <span class="shop-name mt-2 ms-2">SECOND CUP</span>
         </div>
         <div class="col-8 navbar-alignement">
           <a routerLink="/home"><span>HOME</span></a>
@@ -30,12 +33,15 @@
 
     @if(mobileView){
     <div class="mobile-view">
-      <div (click)="goToHome()">
-        <i class="fa-brands fa-java shop-icon"></i>
-        <span class="shop-name">Second Cup</span>
+      <div class="d-flex align-items-center" (click)="goToHome()">
+        <!-- <i class="fa-brands fa-java shop-icon"></i> -->
+        <div class="logo-container">
+          <img class="w-100" src="../../../assets/Images/SecondCup-transparent.png" alt="logo">
+        </div>
+        <span class="shop-name mt-2 ms-2">SECOND CUP</span>
       </div>
 
-      <div class="mobile-cart-container" (click)="goToCart()">
+      <div class="mobile-cart-container mt-2" (click)="goToCart()">
         <i class="fa-solid fa-bag-shopping fa-lg"></i>
         @if(cartNumber !== 0){
         <div class="mobile-cart-counter">{{cartNumber}}</div>
@@ -43,7 +49,7 @@
       </div>
 
       @if(menuButtonView) {
-      <div class="mobile-navbar" (click)="onNavbarClick()">
+      <div class="mobile-navbar mt-2" (click)="onNavbarClick()">
         <div class="straight-lines"></div>
         <div class="straight-lines"></div>
         <div class="straight-lines"></div>

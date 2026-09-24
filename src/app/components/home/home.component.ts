@@ -27,7 +27,8 @@ export class HomeComponent implements OnInit {
     this.specialCoffee = [
       {
         id: 1,
-        productImg: 'assets/Images/Turkish_Coffee.png',
+        productImg:
+          'https://res.cloudinary.com/ec96s1ha/image/upload/f_auto,q_auto/Turkish_Coffee_pzweo4',
         productName: 'Turkish Coffee',
         productDescription: 'Finely ground coffee boiled and served in a cup.',
         productPrice: 70,
@@ -35,7 +36,8 @@ export class HomeComponent implements OnInit {
       },
       {
         id: 2,
-        productImg: 'assets/Images/Latte.png',
+        productImg:
+          'https://res.cloudinary.com/ec96s1ha/image/upload/v1783944119/Latte_sn6h93.png',
         productName: 'Iced Spanish Latte',
         productDescription:
           'A Latin twist of rich espresso and special milk with a sweet finish.',
@@ -44,7 +46,8 @@ export class HomeComponent implements OnInit {
       },
       {
         id: 3,
-        productImg: 'assets/Images/Salted_caramel.png',
+        productImg:
+          'https://res.cloudinary.com/ec96s1ha/image/upload/v1783944120/Salted_caramel_jskqbi.png',
         productName: 'Iced Salted Caramel',
         productDescription:
           'Caramel cream espresso with whipped cream and salted sugar.',
@@ -53,7 +56,8 @@ export class HomeComponent implements OnInit {
       },
       {
         id: 4,
-        productImg: 'assets/Images/Filter_Coffee.jpg',
+        productImg:
+          'https://res.cloudinary.com/ec96s1ha/image/upload/v1783944117/Filter_Coffee_d2pgk9.jpg',
         productName: 'Filtered Coffee',
         productDescription:
           'Freshly brewed filtered coffee with a smooth, clean finish.',
@@ -65,7 +69,8 @@ export class HomeComponent implements OnInit {
     this.specialDesserts = [
       {
         id: 5,
-        productImg: 'assets/Images/Classic_Tiramisu.png',
+        productImg:
+          'https://res.cloudinary.com/ec96s1ha/image/upload/v1783942295/Classic_Tiramisu_mixdej.png',
         productName: 'Classic Tiramisu',
         productDescription:
           'Espresso-soaked ladyfingers with mascarpone cream and cocoa.',
@@ -74,7 +79,8 @@ export class HomeComponent implements OnInit {
       },
       {
         id: 6,
-        productImg: 'assets/Images/Donuts.png',
+        productImg:
+          'https://res.cloudinary.com/ec96s1ha/image/upload/v1783944119/Donuts_m1a1pw.png',
         productName: 'Donuts',
         productDescription:
           'Golden, tender donut crafted with rich, sweet glaze.',
@@ -83,7 +89,8 @@ export class HomeComponent implements OnInit {
       },
       {
         id: 7,
-        productImg: 'assets/Images/Cinnamon_Churros.png',
+        productImg:
+          'https://res.cloudinary.com/ec96s1ha/image/upload/v1783944117/Cinnamon_Churros_bygw1m.png',
         productName: 'Cinnamon Churros',
         productDescription: 'Crispy churros coated in cinnamon sugar.',
         productPrice: 190,
@@ -91,7 +98,8 @@ export class HomeComponent implements OnInit {
       },
       {
         id: 8,
-        productImg: 'assets/Images/Lotus_Cheesecake.png',
+        productImg:
+          'https://res.cloudinary.com/ec96s1ha/image/upload/v1783944122/Lotus_Cheesecake_nntcbt.png',
         productName: 'Lotus Cheesecake',
         productDescription:
           'Creamy cheesecake topped with Lotus biscuit crumble.',

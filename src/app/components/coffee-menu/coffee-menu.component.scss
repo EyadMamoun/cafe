@@ -2,8 +2,12 @@
 @use "colors" as cv;
 @use "variables" as vr;
 
-.row {
+.overall-container {
     margin-top: 100px;
+    box-shadow: 2px 10px 30px grey;
+    background-color: cv.$white-color;
+    padding: 24px 0;
+    border-radius: 8px;
 
     .menu-container {
         @include mx.flex-display(row, space-evenly, center, wrap);
