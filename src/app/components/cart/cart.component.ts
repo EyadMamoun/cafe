@@ -29,7 +29,7 @@ export class CartComponent implements OnInit {
 
     this._cartService.cartSubtotal$.subscribe((value) => {
       this.subtotal = value;
-      this.total = this.subtotal + 40;
+      // this.total = this.subtotal + 40;
     });
   }
 

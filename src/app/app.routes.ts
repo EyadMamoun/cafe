@@ -21,5 +21,5 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
-  { path: '404', component: Error404Component },
+  { path: '**', component: Error404Component },
 ];

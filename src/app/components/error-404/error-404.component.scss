@@ -1,0 +1,11 @@
+@use "variables" as vr;
+
+.image-container{
+    width: 75%;
+    margin: 65px auto 0 auto;
+
+    @media (max-width: vr.$breakpoint-md){
+        width: 100%;
+        padding: 200px 0;
+    }
+}

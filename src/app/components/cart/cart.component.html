@@ -23,12 +23,12 @@
             </div>
             <div class="shipping">
                 <span>Estimated Shipping</span>
-                <span>EGP 40</span>
+                <span>{{'EGP ' + (subtotal > 0 ? 40 : 0)}}</span>
             </div>
             <div class="line"></div>
             <div class="total">
                 <span>TOTAL</span>
-                <span>{{'EGP ' + total}}</span>
+                <span>{{'EGP ' + (subtotal > 0 ? subtotal + 40 : 0)}}</span>
             </div>
             <button class="btn btn-warning checkout-btn" (click)="goToCheckout()">PROCEED TO CHECKOUT</button>
         </div>
