@@ -14,7 +14,7 @@
     font-size: 17px;
     font-weight: 700;
     @media (max-width: vr.$breakpoint-md) {
-      font-size: 14px;
+      font-size: 13px;
     }
   }
 
@@ -22,7 +22,7 @@
     font-size: 13px;
     @include mx.text-truncate(2);
     @media (max-width: vr.$breakpoint-md) {
-      font-size: 12px;
+      font-size: 11px;
     }
   }
 
