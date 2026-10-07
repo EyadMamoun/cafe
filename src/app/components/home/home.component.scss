@@ -132,7 +132,7 @@
       font-weight: 700;
       font-size: 35px;
       @media (max-width: vr.$breakpoint-md) {
-        font-size: 12px;
+        font-size: 10px;
       }
     }
 
@@ -146,7 +146,7 @@
       border-radius: 50px;
       @media (max-width: vr.$breakpoint-md) {
         padding: 8px 13px;
-        margin-top: 8px;
+        margin: 8px 0 0 0;
         font-size: 7px;
       }
     }
