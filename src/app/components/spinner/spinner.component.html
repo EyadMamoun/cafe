@@ -1,0 +1,33 @@
+@if (loading.isLoading$ | async) {
+<div class="overlay" role="status" aria-live="polite" aria-label="Loading">
+    <div class="box">
+        <svg class="cup" viewBox="0 0 120 120" aria-hidden="true">
+            <defs>
+                <clipPath id="cup-clip">
+                    <path d="M25 45 H85 V70 Q85 95 55 95 Q25 95 25 70 Z" />
+                </clipPath>
+            </defs>
+
+            <!-- steam -->
+            <g class="steam" fill="none" stroke-linecap="round">
+                <path class="s s1" d="M45 38 Q39 30 45 22 Q51 14 45 6" />
+                <path class="s s2" d="M58 38 Q52 30 58 22 Q64 14 58 6" />
+                <path class="s s3" d="M71 38 Q65 30 71 22 Q77 14 71 6" />
+            </g>
+
+            <!-- cup body + coffee filling up -->
+            <path class="cup-body" d="M25 45 H85 V70 Q85 95 55 95 Q25 95 25 70 Z" />
+            <g clip-path="url(#cup-clip)">
+                <rect class="coffee" x="25" y="45" width="60" height="55" />
+            </g>
+
+            <!-- cup rim, handle, saucer -->
+            <ellipse class="rim" cx="55" cy="45" rx="30" ry="4" />
+            <path class="handle" d="M85 52 H93 Q103 52 103 63 Q103 74 93 74 H83" fill="none" />
+            <ellipse class="saucer" cx="55" cy="101" rx="40" ry="5" />
+        </svg>
+
+        <p class="text">Brewing your coffee<span class="dots"></span></p>
+    </div>
+</div>
+}
