@@ -1,12 +1,15 @@
-import { NgClass } from '@angular/common';
+import { AsyncPipe, NgClass } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
 import { CartService } from '../../services/cart/cart.service';
+import { AuthService } from '../../services/auth/auth.service';
+import { ToastrService } from 'ngx-toastr';
+import { LoadingService } from '../../services/loading/loading.service';
 
 @Component({
   selector: 'app-navbar',
-  imports: [NgClass, RouterModule],
+  imports: [NgClass, RouterModule, AsyncPipe],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
@@ -27,6 +30,9 @@ export class NavbarComponent implements OnInit {
   constructor(
     private readonly _router: Router,
     private readonly _cartService: CartService,
+    public readonly _authService: AuthService,
+    private readonly _toastr: ToastrService,
+    private readonly _loadingService: LoadingService,
   ) {}
 
   ngOnInit(): void {
@@ -59,5 +65,14 @@ export class NavbarComponent implements OnInit {
 
   goToHome() {
     this._router.navigateByUrl('/home');
+  }
+
+  logout() {
+    this._loadingService.show();
+    setTimeout(() => {
+      this._authService.logout();
+      this._loadingService.hide();
+      this._toastr.success('Hope we see you soon!!');
+    }, 1000);
   }
 }

@@ -1,4 +1,4 @@
 <div class="my-2">
-    <label for="" class="mb-1">{{label}}</label>
-    <input [type]="inputType" class="form-control input-decoration">
+    <label class="mb-1">{{ label }}</label>
+    <input [type]="inputType" [value]="value" (input)="onInput($event)" class="form-control input-decoration" />
 </div>

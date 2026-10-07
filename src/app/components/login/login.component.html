@@ -1,18 +1,18 @@
 <div class="container">
-    <div class="row">
+    <div class="row login-container">
         <span class="header-style">LOGIN NOW</span>
         <div class="col-12 col-md-4">
-            <app-generic-input [label]="'Email'" [inputType]="'email'" />
+            <app-generic-input [label]="'Email'" [inputType]="'email'" [(value)]="email" />
         </div>
         <div class="col-12 col-md-4">
-            <app-generic-input [label]="'Password'" />
+            <app-generic-input [label]="'Password'" [inputType]="'password'" [(value)]="password" />
         </div>
         <div class="col-3 col-md-1 btn-container">
-            <button class="btn login-btn">Login</button>
+            <button class="btn login-btn" (click)="login()">Login</button>
         </div>
         <div class="col-12 disclamer">
             <span>Don't have an account yet?! </span>
-            <a href="/register">Register Now</a>
+            <a routerLink="/register">Register Now</a>
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-generic-input',
@@ -8,5 +8,13 @@ import { Component, Input } from '@angular/core';
 })
 export class GenericInputComponent {
   @Input() label: string = '';
-  @Input() inputType: 'text' | 'number' | 'email' = 'text';
+  @Input() inputType: 'text' | 'number' | 'email' | 'password' = 'text';
+  @Input() value: string = '';
+  @Output() valueChange = new EventEmitter<string>();
+
+  onInput(event: Event) {
+    const newValue = (event.target as HTMLInputElement).value;
+    this.value = newValue;
+    this.valueChange.emit(newValue);
+  }
 }

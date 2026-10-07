@@ -16,7 +16,11 @@
           <a routerLink="/dessert-menu"><span>DESSERT</span></a>
           <a routerLink="/shop"><span>SHOP</span></a>
           <a routerLink="/about"><span>ABOUT</span></a>
+          @if(_authService.isLoggedIn$ | async){
+          <a style="cursor: pointer;"><span (click)="logout()">LOGOUT</span></a>
+          } @else{
           <a routerLink="/login"><span>LOGIN</span></a>
+          }
         </div>
         <div class="col-1 icon-alignment">
           <div class="cart-container" (click)="goToCart()">
@@ -69,7 +73,11 @@
       <a routerLink="/dessert-menu"><span>DESSERT</span></a>
       <a routerLink="/shop"><span>SHOP</span></a>
       <a routerLink="/about"><span>ABOUT</span></a>
+      @if(_authService.isLoggedIn$ | async){
+      <a style="cursor: pointer;"><span (click)="logout()">LOGOUT</span></a>
+      } @else{
       <a routerLink="/login"><span>LOGIN</span></a>
+      }
     </div>
     }
     }
