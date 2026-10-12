@@ -1,4 +1,32 @@
 <div class="my-2">
     <label class="mb-1">{{ label }}</label>
-    <input [type]="inputType" [value]="value" (input)="onInput($event)" class="form-control input-decoration" />
+
+    <!-- [3] INPUT -->
+    <!-- WHAT: The real input element the user types into. -->
+    <!-- WHY of each binding: -->
+    <!--   [type]  lets the parent choose text, email, password, or number. -->
+    <!--   [value] shows the value Angular wrote through writeValue. -->
+    <!--   [disabled] reflects setDisabledState, so control.disable() works. -->
+    <!--   (input) sends every keystroke to the form through onInput. -->
+    <!--   (blur) tells the form the user left the field, so touched is set. -->
+    <!--   [class.is-invalid] adds Bootstrap's red border only when showError is true. -->
+    <input [type]="inputType" [value]="value" [disabled]="disabled" (input)="onInput($event)" (blur)="onBlur()"
+        class="form-control input-decoration" [class.is-invalid]="showError" />
+
+    <!-- [4] ERROR BLOCK -->
+    <!-- WHAT: Shows one error message when the field is invalid and touched. -->
+    <!-- WHY: It lives inside the component, so every field gets validation messages for free and you -->
+    <!--      never repeat error markup in the register template. The if / else-if chain shows only -->
+    <!--      the first problem, so the user does not see three messages at once. -->
+    @if (showError) {
+    <small class="text-danger">
+        @if (ngControl.errors?.['required']) {
+        {{ label }} is required
+        } @else if (ngControl.errors?.['email']) {
+        Invalid email address
+        } @else if (ngControl.errors?.['minlength']) {
+        Minimum {{ ngControl.errors?.['minlength'].requiredLength }} characters
+        }
+    </small>
+    }
 </div>
