@@ -7,3 +7,7 @@ export type UserLogInResponse = {
   message: string;
   token: string;
 };
+
+export type UserSignUpBody = UserLogInBody & {
+  name: string;
+};

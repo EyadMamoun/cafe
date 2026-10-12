@@ -4,16 +4,30 @@ import { GenericInputComponent } from '../../shared/components/generic-input/gen
 import { AuthService } from '../../services/auth/auth.service';
 import { UserLogInBody, UserLogInResponse } from '../../types/user.type';
 import { ToastrService } from 'ngx-toastr';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+  ɵInternalFormsSharedModule,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [GenericInputComponent, RouterLink],
+  imports: [
+    GenericInputComponent,
+    RouterLink,
+    ɵInternalFormsSharedModule,
+    ReactiveFormsModule,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  email = '';
-  password = '';
+  loginForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', Validators.required),
+  });
 
   constructor(
     private readonly _authService: AuthService,
@@ -23,20 +37,14 @@ export class LoginComponent {
 
   login() {
     const body: UserLogInBody = {
-      email: this.email,
-      password: this.password,
+      email: this.loginForm.value.email ?? '',
+      password: this.loginForm.value.password ?? '',
     };
 
-    this._authService.login(body).subscribe({
-      next: (res: UserLogInResponse) => {
-        this._authService.saveToken(res.token);
-        this._toastr.success('Welcome Back!');
-        this._router.navigate(['/home']);
-      },
-      error: (err) => {
-        console.log(err);
-        this._toastr.error(err.error.err);
-      },
+    this._authService.login(body).subscribe((res: UserLogInResponse) => {
+      this._authService.saveToken(res.token);
+      this._toastr.success(res.message);
+      this._router.navigate(['/home']);
     });
   }
 }

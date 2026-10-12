@@ -1,26 +1,50 @@
 <div class="container">
-    <div class="row register-container">
-        <span class="header-style">REGISTER NOW</span>
-        <div class="col-12 col-md-4">
-            <app-generic-input [label]="'First Name'"></app-generic-input>
+    <!-- [2] FORM TAG with [formGroup] and (ngSubmit) -->
+    <!-- WHAT: Wraps all inputs in a real form and connects it to registerForm in the class. -->
+    <!-- WHY: [formGroup] is what lets every formControlName inside find its control. -->
+    <!--      (ngSubmit) calls onSubmit when the form is submitted. Using a real form also means -->
+    <!--      pressing Enter in a field submits it, which users expect. -->
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="row register-container">
+            <span class="header-style">REGISTER NOW</span>
+            <div class="col-12 col-md-4">
+                <app-generic-input label="First Name" formControlName="firstName" />
+            </div>
+
+            <div class="col-12 col-md-4">
+                <app-generic-input label="Last Name" formControlName="lastName" />
+            </div>
+
+            <div class="col-12 col-md-4">
+                <app-generic-input label="Email" inputType="email" formControlName="email" />
+            </div>
+
+            <!-- [6] PASSWORD INPUT -->
+            <!-- WHAT: inputType="password" hides the typed characters. -->
+            <div class="col-12 col-md-4">
+                <app-generic-input label="Password" inputType="password" formControlName="password" />
+            </div>
+
+            <!-- [7] CONFIRM PASSWORD + MISMATCH MESSAGE -->
+            <!-- WHAT: The confirm input plus an extra message shown when the passwords differ. -->
+            <!-- WHY: passwordMismatch is an error on the GROUP, not on the confirmPassword control, -->
+            <!--      so the generic input can't see it through its own ngControl. That is why this -->
+            <!--      message is written here, not inside the generic input. The touched check on -->
+            <!--      confirmPassword prevents the message from showing before the user reaches that field. -->
+            <div class="col-12 col-md-4">
+                <app-generic-input label="Re-type Password" inputType="password" formControlName="confirmPassword" />
+                @if (registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched) {
+                <small class="text-danger">Passwords do not match</small>
+                }
+            </div>
+
+            <!-- [8] SUBMIT BUTTON -->
+            <!-- WHAT: The Register button. -->
+            <!-- WHY: type="submit" makes clicking it trigger (ngSubmit) from label 2. Without it, -->
+            <!--      the button would do nothing, and without a form around it, ngSubmit wouldn't exist. -->
+            <div class="col-4 col-md-1 btn-container">
+                <button type="submit" class="btn register-btn">Register</button>
+            </div>
         </div>
-        <div class="col-12 col-md-4">
-            <app-generic-input [label]="'Last Name'"></app-generic-input>
-        </div>
-        <div class="col-12 col-md-4">
-            <app-generic-input [label]="'Email'"></app-generic-input>
-        </div>
-        <div class="col-12">
-            <app-generic-input [label]="'Address'"></app-generic-input>
-        </div>
-        <div class="col-12 col-md-4">
-            <app-generic-input [label]="'Password'"></app-generic-input>
-        </div>
-        <div class="col-12 col-md-4">
-            <app-generic-input [label]="'Re-type Password'"></app-generic-input>
-        </div>
-        <div class="col-4 col-md-1 btn-container">
-            <button class="btn register-btn">Register</button>
-        </div>
-    </div>
+    </form>
 </div>

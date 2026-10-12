@@ -1,7 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UserLogInBody, UserLogInResponse } from '../../types/user.type';
+import {
+  UserLogInBody,
+  UserLogInResponse,
+  UserSignUpBody,
+} from '../../types/user.type';
 import { BehaviorSubject, catchError, map, Observable, throwError } from 'rxjs';
+import baseUrl from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -17,10 +22,16 @@ export class AuthService {
 
   login(userBody: UserLogInBody): Observable<UserLogInResponse> {
     return this._http
-      .post<UserLogInResponse>(
-        'https://second-cup-backend.vercel.app/api/auth/signin',
-        userBody,
-      )
+      .post<UserLogInResponse>(`${baseUrl}/api/auth/signin`, userBody)
+      .pipe(
+        map((response: UserLogInResponse) => response),
+        catchError((err) => throwError(() => err)),
+      );
+  }
+
+  signUp(userBody: UserSignUpBody): Observable<UserLogInResponse> {
+    return this._http
+      .post<UserLogInResponse>(`${baseUrl}/api/auth/signup`, userBody)
       .pipe(
         map((response: UserLogInResponse) => response),
         catchError((err) => throwError(() => err)),
