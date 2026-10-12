@@ -117,13 +117,14 @@ export class CoffeeMenuComponent implements OnInit {
   viewHotDrinks() {
     this.isHotDrinks = true;
     this.isColdDrinks = false;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   viewColdDrinks() {
     this.isHotDrinks = false;
     this.isColdDrinks = true;
 
-    const yOffset = -80; // height of header
+    const yOffset = -140; // height of header
     const el = this.coldDrinksSection.nativeElement;
     const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
 

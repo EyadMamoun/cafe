@@ -35,6 +35,8 @@
         padding: 8px;
         margin-left: 12px;
         border-radius: 4px;
+        position: sticky;
+        top: 90px;
         @include mx.flex-display(row, flex-start, center);
 
         .stepper-option{
