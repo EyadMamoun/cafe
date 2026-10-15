@@ -12,78 +12,78 @@ import { CartService } from '../../services/cart/cart.service';
 })
 export class ShopComponent implements OnInit {
   coffeeProducts: Product[] = [
-    {
-      id: 9,
-      productName: 'Espresso Forte Dark 312g',
-      productDescription:
-        'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
-      productImg: 'assets/Images/coffee_beans_product.png',
-      productPrice: 445,
-      counts: 1,
-    },
-    {
-      id: 9,
-      productName: 'Espresso Forte Dark 312g',
-      productDescription:
-        'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
-      productImg: 'assets/Images/coffee_beans_product.png',
-      productPrice: 445,
-      counts: 1,
-    },
-    {
-      id: 9,
-      productName: 'Espresso Forte Dark 312g',
-      productDescription:
-        'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
-      productImg: 'assets/Images/coffee_beans_product.png',
-      productPrice: 445,
-      counts: 1,
-    },
-    {
-      id: 9,
-      productName: 'Espresso Forte Dark 312g',
-      productDescription:
-        'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
-      productImg: 'assets/Images/coffee_beans_product.png',
-      productPrice: 445,
-      counts: 1,
-    },
-    {
-      id: 9,
-      productName: 'Espresso Forte Dark 312g',
-      productDescription:
-        'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
-      productImg: 'assets/Images/coffee_beans_product.png',
-      productPrice: 445,
-      counts: 1,
-    },
-    {
-      id: 9,
-      productName: 'Espresso Forte Dark 312g',
-      productDescription:
-        'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
-      productImg: 'assets/Images/coffee_beans_product.png',
-      productPrice: 445,
-      counts: 1,
-    },
-    {
-      id: 9,
-      productName: 'Espresso Forte Dark 312g',
-      productDescription:
-        'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
-      productImg: 'assets/Images/coffee_beans_product.png',
-      productPrice: 445,
-      counts: 1,
-    },
-    {
-      id: 9,
-      productName: 'Espresso Forte Dark 312g',
-      productDescription:
-        'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
-      productImg: 'assets/Images/coffee_beans_product.png',
-      productPrice: 445,
-      counts: 1,
-    },
+    // {
+    //   id: 9,
+    //   productName: 'Espresso Forte Dark 312g',
+    //   productDescription:
+    //     'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
+    //   productImg: 'assets/Images/coffee_beans_product.png',
+    //   productPrice: 445,
+    //   counts: 1,
+    // },
+    // {
+    //   id: 9,
+    //   productName: 'Espresso Forte Dark 312g',
+    //   productDescription:
+    //     'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
+    //   productImg: 'assets/Images/coffee_beans_product.png',
+    //   productPrice: 445,
+    //   counts: 1,
+    // },
+    // {
+    //   id: 9,
+    //   productName: 'Espresso Forte Dark 312g',
+    //   productDescription:
+    //     'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
+    //   productImg: 'assets/Images/coffee_beans_product.png',
+    //   productPrice: 445,
+    //   counts: 1,
+    // },
+    // {
+    //   id: 9,
+    //   productName: 'Espresso Forte Dark 312g',
+    //   productDescription:
+    //     'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
+    //   productImg: 'assets/Images/coffee_beans_product.png',
+    //   productPrice: 445,
+    //   counts: 1,
+    // },
+    // {
+    //   id: 9,
+    //   productName: 'Espresso Forte Dark 312g',
+    //   productDescription:
+    //     'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
+    //   productImg: 'assets/Images/coffee_beans_product.png',
+    //   productPrice: 445,
+    //   counts: 1,
+    // },
+    // {
+    //   id: 9,
+    //   productName: 'Espresso Forte Dark 312g',
+    //   productDescription:
+    //     'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
+    //   productImg: 'assets/Images/coffee_beans_product.png',
+    //   productPrice: 445,
+    //   counts: 1,
+    // },
+    // {
+    //   id: 9,
+    //   productName: 'Espresso Forte Dark 312g',
+    //   productDescription:
+    //     'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
+    //   productImg: 'assets/Images/coffee_beans_product.png',
+    //   productPrice: 445,
+    //   counts: 1,
+    // },
+    // {
+    //   id: 9,
+    //   productName: 'Espresso Forte Dark 312g',
+    //   productDescription:
+    //     'Bold dark roast espresso features a deep, syrupy flavour with a heavy body.',
+    //   productImg: 'assets/Images/coffee_beans_product.png',
+    //   productPrice: 445,
+    //   counts: 1,
+    // },
   ];
   subtotal: number = 0;
   showSubtotal: boolean = true;

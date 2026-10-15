@@ -18,38 +18,38 @@ import { CartService } from '../../services/cart/cart.service';
 })
 export class DessertMenuComponent implements OnInit {
   dessert: Product[] = [
-    {
-      id: 5,
-      productImg: 'assets/Images/Classic_Tiramisu.png',
-      productName: 'Classic Tiramisu',
-      productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
-      productPrice: 220,
-      counts: 1,
-    },
-    {
-      id: 5,
-      productImg: 'assets/Images/Classic_Tiramisu.png',
-      productName: 'Classic Tiramisu',
-      productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
-      productPrice: 220,
-      counts: 1,
-    },
-    {
-      id: 5,
-      productImg: 'assets/Images/Classic_Tiramisu.png',
-      productName: 'Classic Tiramisu',
-      productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
-      productPrice: 220,
-      counts: 1,
-    },
-    {
-      id: 5,
-      productImg: 'assets/Images/Classic_Tiramisu.png',
-      productName: 'Classic Tiramisu',
-      productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
-      productPrice: 220,
-      counts: 1,
-    },
+    // {
+    //   id: 5,
+    //   productImg: 'assets/Images/Classic_Tiramisu.png',
+    //   productName: 'Classic Tiramisu',
+    //   productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
+    //   productPrice: 220,
+    //   counts: 1,
+    // },
+    // {
+    //   id: 5,
+    //   productImg: 'assets/Images/Classic_Tiramisu.png',
+    //   productName: 'Classic Tiramisu',
+    //   productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
+    //   productPrice: 220,
+    //   counts: 1,
+    // },
+    // {
+    //   id: 5,
+    //   productImg: 'assets/Images/Classic_Tiramisu.png',
+    //   productName: 'Classic Tiramisu',
+    //   productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
+    //   productPrice: 220,
+    //   counts: 1,
+    // },
+    // {
+    //   id: 5,
+    //   productImg: 'assets/Images/Classic_Tiramisu.png',
+    //   productName: 'Classic Tiramisu',
+    //   productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
+    //   productPrice: 220,
+    //   counts: 1,
+    // },
   ];
   subtotal: number = 0;
   showSubtotal: boolean = true;

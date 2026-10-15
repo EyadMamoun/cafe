@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row sub-contianer">
         <span class="header-style">YOUR CART</span>
-        @for (item of cart; track item.id) {
+        @for (item of cart; track item._id) {
         <div class="col-12">
             <app-cart-item [cartItem]="item" />
         </div>
