@@ -28,7 +28,7 @@ export class MenuOptionComponent {
     if (this.btnState == 'Order Now') {
       this.btnState = 'Add to cart';
     } else {
-      if (this._cartService.isItemExist(this.selectedProduct.id)) {
+      if (this._cartService.isItemExist(this.selectedProduct._id)) {
         this.toastr.error('Item already exist in your cart');
       } else {
         this.selectedProduct.counts = this.counter;

@@ -34,11 +34,11 @@
     </div>
     <div class="card-styling">
       <div class="row">
-        @for(product of specialCoffee; track product.id){
+        @for(product of specialCoffee; track product._id){
         <div class="col-6 col-md-3">
-          <app-product-card [imgSrc]="product.productImg" [productName]="product.productName"
-            [productDescription]="product.productDescription" [productPrice]="product.productPrice"
-            [specialProduct]="!isMobileView" [normalProduct]="isMobileView" [selectedProduct]="product" />
+          <app-product-card [imgSrc]="product.image" [productName]="product.title"
+            [productDescription]="product.description" [productPrice]="product.price" [specialProduct]="!isMobileView"
+            [normalProduct]="isMobileView" [selectedProduct]="product" />
         </div>
         }
       </div>
@@ -48,11 +48,11 @@
     </div>
     <div class="card-styling">
       <div class="row">
-        @for(product of specialDesserts; track product.id){
+        @for(product of specialDesserts; track product._id){
         <div class="col-6 col-md-3">
-          <app-product-card [imgSrc]="product.productImg" [productName]="product.productName"
-            [productDescription]="product.productDescription" [productPrice]="product.productPrice"
-            [specialProduct]="!isMobileView" [normalProduct]="isMobileView" [selectedProduct]="product" />
+          <app-product-card [imgSrc]="product.image" [productName]="product.title"
+            [productDescription]="product.description" [productPrice]="product.price" [specialProduct]="!isMobileView"
+            [normalProduct]="isMobileView" [selectedProduct]="product" />
         </div>
         }
       </div>

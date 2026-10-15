@@ -19,28 +19,28 @@ export class CartService {
     this.cartItemsSubject.next(this.cartItemsSubject.value + 1);
     this.cartElementSubject.next([...this.cartElementSubject.value, element]);
     this.cartSubtotalSubject.next(
-      this.cartSubtotalSubject.value + element.productPrice * element.counts,
+      this.cartSubtotalSubject.value + element.price * element.counts,
     );
   }
 
-  removeItem(id: number) {
+  removeItem(id: string) {
     this.cartElementSubject.next(
       this.cartElementSubject.value.filter((item) => {
-        return item.id !== id;
+        return item._id !== id;
       }),
     );
     this.cartItemsSubject.next(this.cartItemsSubject.value - 1);
     this.cartSubtotalSubject.next(0);
     this.cartElementSubject.value.forEach((item) => {
       this.cartSubtotalSubject.next(
-        this.cartSubtotalSubject.value + item.productPrice * item.counts,
+        this.cartSubtotalSubject.value + item.price * item.counts,
       );
     });
   }
 
-  isItemExist(id: number): boolean {
+  isItemExist(id: string): boolean {
     const isItemExist = this.cartElementSubject.value.find((item) => {
-      return item.id == id;
+      return item._id == id;
     });
 
     return !!isItemExist;
