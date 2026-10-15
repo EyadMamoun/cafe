@@ -4,6 +4,7 @@
 
     .menu-option {
         width: 84%;
+        height: 150px;
         display: flex;
         margin: 16px 0;
         
@@ -24,6 +25,7 @@
         }
 
         .product-description {
+            width: 100%;
             background-color: #f1f0ee;
             border-radius: 8px;
             padding: 10px;

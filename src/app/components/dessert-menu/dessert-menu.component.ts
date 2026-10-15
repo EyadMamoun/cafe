@@ -1,14 +1,9 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../../types/products.type';
 import { MenuOptionComponent } from '../../shared/components/menu-option/menu-option.component';
 import { SubtotalComponent } from '../../shared/components/subtotal/subtotal.component';
 import { CartService } from '../../services/cart/cart.service';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-dessert-menu',
@@ -17,46 +12,17 @@ import { CartService } from '../../services/cart/cart.service';
   styleUrl: './dessert-menu.component.scss',
 })
 export class DessertMenuComponent implements OnInit {
-  dessert: Product[] = [
-    // {
-    //   id: 5,
-    //   productImg: 'assets/Images/Classic_Tiramisu.png',
-    //   productName: 'Classic Tiramisu',
-    //   productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
-    //   productPrice: 220,
-    //   counts: 1,
-    // },
-    // {
-    //   id: 5,
-    //   productImg: 'assets/Images/Classic_Tiramisu.png',
-    //   productName: 'Classic Tiramisu',
-    //   productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
-    //   productPrice: 220,
-    //   counts: 1,
-    // },
-    // {
-    //   id: 5,
-    //   productImg: 'assets/Images/Classic_Tiramisu.png',
-    //   productName: 'Classic Tiramisu',
-    //   productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
-    //   productPrice: 220,
-    //   counts: 1,
-    // },
-    // {
-    //   id: 5,
-    //   productImg: 'assets/Images/Classic_Tiramisu.png',
-    //   productName: 'Classic Tiramisu',
-    //   productDescription: 'Espresso ladyfingers with mascarpone and cocoa.',
-    //   productPrice: 220,
-    //   counts: 1,
-    // },
-  ];
+  dessert: Product[] = [];
   subtotal: number = 0;
   showSubtotal: boolean = true;
 
-  constructor(private readonly _cartService: CartService) {}
+  constructor(
+    private readonly _cartService: CartService,
+    private readonly _productService: ProductService,
+  ) {}
 
   ngOnInit(): void {
+    this.getProducts();
     this._cartService.cartSubtotal$.subscribe((value) => {
       this.subtotal = value;
     });
@@ -64,5 +30,15 @@ export class DessertMenuComponent implements OnInit {
 
   closeSubtotal() {
     this.showSubtotal = false;
+  }
+
+  getProducts() {
+    this._productService.getAllProducts().subscribe((res) => {
+      res.products.forEach((product) => {
+        if (product.category.name == 'Dessert') {
+          this.dessert.push({ ...product, counts: 1 });
+        }
+      });
+    });
   }
 }
