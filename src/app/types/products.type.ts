@@ -11,6 +11,10 @@ export type Product = {
   counts: number;
 };
 
+export type Products = {
+  products: Product[];
+};
+
 export type Category = {
   _id: string;
   name: string;

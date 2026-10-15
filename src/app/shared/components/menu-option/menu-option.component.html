@@ -1,14 +1,14 @@
 <div class="menu-option">
     <div class="img-style">
-        <img [src]="menuItems.productImg" alt="Product image">
+        <img [src]="menuItems.image" alt="Product image">
     </div>
     <div class="product-description">
         <div class="d-flex flex-column">
-            <span class="product-title">{{menuItems.productName}}</span>
-            <span class="description">{{menuItems.productDescription}}</span>
+            <span class="product-title">{{menuItems.title}}</span>
+            <span class="description">{{menuItems.description}}</span>
         </div>
         <div class="w-100 d-flex justify-content-between">
-            <span class="price">{{'LE ' + menuItems.productPrice}}</span>
+            <span class="price">{{'LE ' + menuItems.price}}</span>
             @if(isCounter){
             <div class="counter">
                 <button class="btn counter-btn" (click)="removeItemBtn()">-</button>

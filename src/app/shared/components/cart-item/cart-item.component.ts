@@ -19,7 +19,7 @@ export class CartItemComponent implements OnInit {
     this.isMobileView = window.innerWidth < 768;
   }
 
-  removeCartItem(id: number) {
+  removeCartItem(id: string) {
     this._cartService.removeItem(id);
   }
 

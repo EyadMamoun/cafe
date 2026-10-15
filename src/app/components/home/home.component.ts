@@ -49,6 +49,8 @@ export class HomeComponent implements OnInit {
     this.screenWidth = window.innerWidth;
     this.isMobileView = this.screenWidth <= 768;
     this.getSpecialProducts();
+    console.log(this.specialCoffee);
+    console.log(this.specialDesserts);
     this._cartService.cartSubtotal$.subscribe((value) => {
       this.subtotal = value;
     });
@@ -56,7 +58,7 @@ export class HomeComponent implements OnInit {
 
   getSpecialProducts() {
     this._productService.getAllProducts().subscribe((res) => {
-      res.forEach((product) => {
+      res.products.forEach((product) => {
         if (product.isSpecial && product.category.name == 'Coffee') {
           this.specialCoffee.push(product);
         } else if (product.isSpecial && product.category.name == 'Dessert') {
