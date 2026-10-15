@@ -60,9 +60,9 @@ export class HomeComponent implements OnInit {
     this._productService.getAllProducts().subscribe((res) => {
       res.products.forEach((product) => {
         if (product.isSpecial && product.category.name == 'Coffee') {
-          this.specialCoffee.push(product);
+          this.specialCoffee.push({ ...product, counts: 1 });
         } else if (product.isSpecial && product.category.name == 'Dessert') {
-          this.specialDesserts.push(product);
+          this.specialDesserts.push({ ...product, counts: 1 });
         }
       });
     });

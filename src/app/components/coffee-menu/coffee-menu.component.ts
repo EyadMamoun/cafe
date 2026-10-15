@@ -9,6 +9,7 @@ import { Product } from '../../types/products.type';
 import { MenuOptionComponent } from '../../shared/components/menu-option/menu-option.component';
 import { SubtotalComponent } from '../../shared/components/subtotal/subtotal.component';
 import { CartService } from '../../services/cart/cart.service';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-coffee-menu',
@@ -25,89 +26,20 @@ export class CoffeeMenuComponent implements OnInit {
     this.isColdDrinks = !(window.scrollY < 220);
   }
 
-  hotCoffee: Product[] = [
-    // {
-    //   productImg: 'assets/Images/Turkish_Coffee.png',
-    //   productName: 'Turkish Coffee',
-    //   productDescription:
-    //     'Finely ground coffee beans boiled and served in a cup.',
-    //   productPrice: 70,
-    //   counts: 1,
-    // },
-    // {
-    //   id: 1,
-    //   productImg: 'assets/Images/Turkish_Coffee.png',
-    //   productName: 'Turkish Coffee',
-    //   productDescription:
-    //     'Finely ground coffee beans boiled and served in a cup.',
-    //   productPrice: 70,
-    //   counts: 1,
-    // },
-    // {
-    //   id: 1,
-    //   productImg: 'assets/Images/Turkish_Coffee.png',
-    //   productName: 'Turkish Coffee',
-    //   productDescription:
-    //     'Finely ground coffee beans boiled and served in a cup.',
-    //   productPrice: 70,
-    //   counts: 1,
-    // },
-    // {
-    //   id: 1,
-    //   productImg: 'assets/Images/Turkish_Coffee.png',
-    //   productName: 'Turkish Coffee',
-    //   productDescription:
-    //     'Finely ground coffee beans boiled and served in a cup.',
-    //   productPrice: 70,
-    //   counts: 1,
-    // },
-  ];
-  icedCoffee: Product[] = [
-    // {
-    //   id: 3,
-    //   productImg: 'assets/Images/Salted_caramel.png',
-    //   productName: 'Iced Salted Caramel',
-    //   productDescription:
-    //     'Caramel espresso with whipped cream and salted sugar.',
-    //   productPrice: 180,
-    //   counts: 1,
-    // },
-    // {
-    //   id: 3,
-    //   productImg: 'assets/Images/Salted_caramel.png',
-    //   productName: 'Iced Salted Caramel',
-    //   productDescription:
-    //     'Caramel espresso with whipped cream and salted sugar.',
-    //   productPrice: 180,
-    //   counts: 1,
-    // },
-    // {
-    //   id: 3,
-    //   productImg: 'assets/Images/Salted_caramel.png',
-    //   productName: 'Iced Salted Caramel',
-    //   productDescription:
-    //     'Caramel espresso with whipped cream and salted sugar.',
-    //   productPrice: 180,
-    //   counts: 1,
-    // },
-    // {
-    //   id: 3,
-    //   productImg: 'assets/Images/Salted_caramel.png',
-    //   productName: 'Iced Salted Caramel',
-    //   productDescription:
-    //     'Caramel espresso with whipped cream and salted sugar.',
-    //   productPrice: 180,
-    //   counts: 1,
-    // },
-  ];
+  hotCoffee: Product[] = [];
+  icedCoffee: Product[] = [];
   isHotDrinks: boolean = true;
   isColdDrinks: boolean = false;
   subtotal: number = 0;
   showSubtotal: boolean = true;
 
-  constructor(private readonly _cartService: CartService) {}
+  constructor(
+    private readonly _cartService: CartService,
+    private readonly _productService: ProductService,
+  ) {}
 
   ngOnInit(): void {
+    this.getProducts();
     this._cartService.cartSubtotal$.subscribe((value) => {
       this.subtotal = value;
     });
@@ -132,5 +64,20 @@ export class CoffeeMenuComponent implements OnInit {
 
   closeSubtotal() {
     this.showSubtotal = false;
+  }
+
+  getProducts() {
+    this._productService.getAllProducts().subscribe((res) => {
+      res.products.forEach((product) => {
+        if (product.servingTemp == 'hot' && product.category.name == 'Coffee') {
+          this.hotCoffee.push({ ...product, counts: 1 });
+        } else if (
+          product.servingTemp == 'cold' &&
+          product.category.name == 'Coffee'
+        ) {
+          this.icedCoffee.push({ ...product, counts: 1 });
+        }
+      });
+    });
   }
 }

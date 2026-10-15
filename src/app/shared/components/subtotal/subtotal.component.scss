@@ -3,7 +3,7 @@
 @use "mixins" as mx;
 
 .subtotal-container {
-  wth: 25%;
+  width: 25%;
   height: 50px;
   background-color: #b49773;
   color: white;
@@ -19,7 +19,7 @@
   }
 
   .close {
-    wth: 24px;
+    width: 24px;
     height: 24px;
     border-radius: 50%;
     background-color: cv.$text-brown;
