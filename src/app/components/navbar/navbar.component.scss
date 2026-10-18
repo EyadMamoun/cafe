@@ -37,6 +37,17 @@
         a {
           text-decoration: none;
           color: cv.$white-color;
+
+          .line{
+            width: 20%;
+            height: 2px;
+            background-color: cv.$white-color;
+            transition: width 1s;
+          }
+
+          &:hover .line{
+            width: 100%;
+          }
         }
       }
       

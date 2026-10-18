@@ -11,15 +11,30 @@
           <span class="shop-name mt-2 ms-2">SECOND CUP</span>
         </div>
         <div class="col-8 navbar-alignement">
-          <a routerLink="/home"><span>HOME</span></a>
-          <a routerLink="/coffee-menu"><span>COFFEE</span></a>
-          <a routerLink="/dessert-menu"><span>DESSERT</span></a>
-          <a routerLink="/shop"><span>SHOP</span></a>
-          <a routerLink="/about"><span>ABOUT</span></a>
+          <a routerLink="/home">
+            <span>HOME</span>
+            <div class="line"></div>
+          </a>
+          <a routerLink="/coffee-menu"><span>COFFEE</span>
+            <div class="line"></div>
+          </a>
+          <a routerLink="/dessert-menu"><span>DESSERT</span>
+            <div class="line"></div>
+          </a>
+          <a routerLink="/shop"><span>SHOP</span>
+            <div class="line"></div>
+          </a>
+          <a routerLink="/about"><span>ABOUT</span>
+            <div class="line"></div>
+          </a>
           @if(_authService.isLoggedIn$ | async){
-          <a style="cursor: pointer;"><span (click)="logout()">LOGOUT</span></a>
+          <a style="cursor: pointer;"><span (click)="logout()">LOGOUT</span>
+            <div class="line"></div>
+          </a>
           } @else{
-          <a routerLink="/login"><span>LOGIN</span></a>
+          <a routerLink="/login"><span>LOGIN</span>
+            <div class="line"></div>
+          </a>
           }
         </div>
         <div class="col-1 icon-alignment">
