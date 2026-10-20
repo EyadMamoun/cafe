@@ -10,7 +10,7 @@
     border-radius: 8px;
 
     .menu-container {
-        @include mx.flex-display(row, space-evenly, center, wrap);
+        @include mx.flex-display(row, flex-start, center, wrap);
 
         .item-positioning{
             width: 50%;
