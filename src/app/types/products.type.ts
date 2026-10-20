@@ -8,7 +8,7 @@ export type Product = {
   stock: number;
   isSpecial: boolean;
   category: Category;
-  servingTemp: string;
+  coffeeType: string;
   counts: number;
 };
 

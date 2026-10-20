@@ -69,13 +69,12 @@ export class CoffeeMenuComponent implements OnInit {
   getProducts() {
     this._productService.getAllProducts().subscribe((res) => {
       res.products.forEach((product) => {
-        if (product.servingTemp == 'hot' && product.category.name == 'Coffee') {
-          this.hotCoffee.push({ ...product, counts: 1 });
-        } else if (
-          product.servingTemp == 'cold' &&
-          product.category.name == 'Coffee'
-        ) {
-          this.icedCoffee.push({ ...product, counts: 1 });
+        if (product.category.name === 'Coffee') {
+          if (product.coffeeType === 'hot') {
+            this.hotCoffee.push({ ...product, counts: 1 });
+          } else if (product.coffeeType === 'cold') {
+            this.icedCoffee.push({ ...product, counts: 1 });
+          }
         }
       });
     });
