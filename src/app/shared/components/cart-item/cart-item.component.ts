@@ -26,6 +26,9 @@ export class CartItemComponent implements OnInit {
   decreaseItemCounts(price: number) {
     this.cartItem.counts--;
     this._cartService.decreaseCartItemCount(price);
+    if (this.cartItem.counts == 0) {
+      this.removeCartItem(this.cartItem._id);
+    }
   }
 
   increaseItemCounts(price: number) {

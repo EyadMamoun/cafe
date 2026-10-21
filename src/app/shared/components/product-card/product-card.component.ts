@@ -26,7 +26,7 @@ export class ProductCardComponent {
 
   constructor(
     private readonly _cartService: CartService,
-    private readonly toastr: ToastrService,
+    private readonly _toastr: ToastrService,
   ) {}
 
   orderBtnClick() {
@@ -35,13 +35,13 @@ export class ProductCardComponent {
       this.btnState = 'Add to cart';
     } else {
       if (this._cartService.isItemExist(this.selectedProduct._id)) {
-        this.toastr.error('Item already exist in your cart');
+        this._toastr.error('Item already exist in your cart');
       } else {
         this.selectedProduct.counts = this.counter;
         this._cartService.addItem(this.selectedProduct);
         this.btnState = 'Order Now';
         this.isCounter = false;
-        this.toastr.success('Product added to cart');
+        this._toastr.success('Product added to cart');
       }
     }
   }
