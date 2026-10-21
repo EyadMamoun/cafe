@@ -1,5 +1,7 @@
-<div class="my-2">
+<div class="input-container">
+    @if(label){
     <label class="mb-1">{{ label }}</label>
+    }
 
     <!-- [3] INPUT -->
     <!-- WHAT: The real input element the user types into. -->
@@ -11,7 +13,7 @@
     <!--   (blur) tells the form the user left the field, so touched is set. -->
     <!--   [class.is-invalid] adds Bootstrap's red border only when showError is true. -->
     <input [type]="inputType" [value]="value" [disabled]="disabled" (input)="onInput($event)" (blur)="onBlur()"
-        class="form-control input-decoration" [class.is-invalid]="showError" />
+        class="form-control input-decoration" [class.is-invalid]="showError" [placeholder]="placeholder" />
 
     <!-- [4] ERROR BLOCK -->
     <!-- WHAT: Shows one error message when the field is invalid and touched. -->

@@ -31,6 +31,7 @@ export class GenericInputComponent implements ControlValueAccessor {
   //      owns the value, and keeping both would give you two sources of truth.
   @Input() label: string = '';
   @Input() inputType: 'text' | 'number' | 'email' | 'password' = 'text';
+  @Input() placeholder: string = '';
 
   // [6] value and disabled (internal state)
   // WHAT: value is what the input currently displays. disabled says whether it is locked.

@@ -1,5 +1,9 @@
 @use 'colors' as cv;
 
+.input-container{
+    margin: 8px 0;
+}
+
 .input-decoration{
     border-bottom: 3px solid cv.$text-brown;
 }

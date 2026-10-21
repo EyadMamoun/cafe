@@ -44,7 +44,11 @@
             <div class="cart-counter">{{cartNumber}}</div>
             }
           </div>
-          <i class="fa-solid fa-magnifying-glass"></i>
+          @if(!searchBar){
+          <i class="fa-solid fa-magnifying-glass" (click)="showSearchBar()"></i>
+          } @else {
+          <i class="fa-solid fa-xmark text-white" (click)="hideSearchBar()"></i>
+          }
         </div>
       </div>
     </div>
@@ -97,4 +101,18 @@
     }
     }
   </div>
+
+  @if(searchBar){
+  <div class="search-container">
+    <app-generic-input [inputType]="'text'" [formControl]="search" [placeholder]="'Search for products'" />
+    <div class="options-container">
+      @if(filteredList.length == 0){
+      <span>No results found</span>
+      }
+      @for(item of filteredList; track item._id){
+      <span (click)="onSearchOptionClick(item)">{{item.title}}</span>
+      }
+    </div>
+  </div>
+  }
 </div>
